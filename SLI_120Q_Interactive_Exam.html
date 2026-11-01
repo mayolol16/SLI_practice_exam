@@ -82,6 +82,36 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    
+    .set-picker {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      margin-left: 6px;
+    }
+    .set-pill-btn {
+      padding: 3px 10px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-block;
+    }
+    .set-pill-btn:hover {
+      color: var(--text-main);
+    }
+    .set-pill-btn.active {
+      background: var(--accent);
+      color: #0b1120;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    }
+    
     /* Top Header */
     .exam-header {
       background: var(--bg-secondary);
@@ -1054,6 +1084,11 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
         <span>SL&I 3 Mastery Exam</span>
         <span class="brand-badge">UB Final Prep</span>
+      <div class="set-picker">
+        <a href="index.html" onclick="navigateToSet(1, event)" class="set-pill-btn active" id="set1NavBtn" title="Load Set 1 (120 Questions)">Set 1 (120Q)</a>
+        <a href="exam2.html" onclick="navigateToSet(2, event)" class="set-pill-btn " id="set2NavBtn" title="Load Set 2 (120 Questions)">Set 2 (120Q)</a>
+      </div>
+    
       </div>
     </div>
 
@@ -2141,6 +2176,27 @@
     }
 
     // Run on startup
+    
+    function navigateToSet(setNum, e) {
+      if (e) e.preventDefault();
+      const currentPath = window.location.pathname;
+      let target = '';
+      if (setNum === 1) {
+        if (currentPath.includes('SLI_120Q_Set2_Interactive_Exam.html')) {
+          target = 'SLI_120Q_Interactive_Exam.html';
+        } else {
+          target = 'index.html';
+        }
+      } else {
+        if (currentPath.includes('SLI_120Q_Interactive_Exam.html')) {
+          target = 'SLI_120Q_Set2_Interactive_Exam.html';
+        } else {
+          target = 'exam2.html';
+        }
+      }
+      window.location.href = target;
+    }
+    
     window.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
