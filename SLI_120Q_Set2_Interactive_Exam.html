@@ -1041,6 +1041,7 @@
         <div class="set-picker">
           <a href="index.html" onclick="navigateToSet(1, event)" class="set-pill-btn " id="set1NavBtn" title="Load Set 1 (120 Questions)">Set 1 (120Q)</a>
           <a href="exam2.html" onclick="navigateToSet(2, event)" class="set-pill-btn active" id="set2NavBtn" title="Load Set 2 (120 Questions)">Set 2 (120Q)</a>
+          <a href="exam3.html" onclick="navigateToSet(3, event)" class="set-pill-btn " id="set3NavBtn" title="Load Set 3 (60 Questions - Official Exam Format)">Set 3 (60Q)</a>
         </div>
       </div>
     </div>
@@ -2077,19 +2078,14 @@
     function navigateToSet(setNum, e) {
       if (e) e.preventDefault();
       const currentPath = window.location.pathname;
+      const isStandalone = currentPath.includes('SLI_');
       let target = '';
       if (setNum === 1) {
-        if (currentPath.includes('SLI_120Q_Set2_Interactive_Exam.html')) {
-          target = 'SLI_120Q_Interactive_Exam.html';
-        } else {
-          target = 'index.html';
-        }
-      } else {
-        if (currentPath.includes('SLI_120Q_Interactive_Exam.html')) {
-          target = 'SLI_120Q_Set2_Interactive_Exam.html';
-        } else {
-          target = 'exam2.html';
-        }
+        target = isStandalone ? 'SLI_120Q_Interactive_Exam.html' : 'index.html';
+      } else if (setNum === 2) {
+        target = isStandalone ? 'SLI_120Q_Set2_Interactive_Exam.html' : 'exam2.html';
+      } else if (setNum === 3) {
+        target = isStandalone ? 'SLI_60Q_Set3_Interactive_Exam.html' : 'exam3.html';
       }
       window.location.href = target;
     }
