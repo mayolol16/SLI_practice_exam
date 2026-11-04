@@ -1043,6 +1043,7 @@
           <a href="exam2.html" onclick="navigateToSet(2, event)" class="set-pill-btn " id="set2NavBtn" title="Load Set 2 (120 Questions)">Set 2 (120Q)</a>
           <a href="exam3.html" onclick="navigateToSet(3, event)" class="set-pill-btn active" id="set3NavBtn" title="Load Set 3 (60 Questions - Official Exam Format)">Set 3 (60Q)</a>
           <a href="exam4.html" onclick="navigateToSet(4, event)" class="set-pill-btn " id="set4NavBtn" title="Load Set 4 (60 Questions - Official Exam Format)">Set 4 (60Q)</a>
+          <a href="inhouse.html" onclick="navigateToSet(5, event)" class="set-pill-btn " id="set5NavBtn" title="Load In-House Exam (60 Questions — Quizzes & Lectures)">In-House (60Q)</a>
         </div>
       </div>
     </div>
@@ -2089,6 +2090,8 @@
         target = isStandalone ? 'SLI_60Q_Set3_Interactive_Exam.html' : 'exam3.html';
       } else if (setNum === 4) {
         target = isStandalone ? 'SLI_60Q_Set4_Interactive_Exam.html' : 'exam4.html';
+      } else if (setNum === 5) {
+        target = isStandalone ? 'SLI_60Q_InHouse_Interactive_Exam.html' : 'inhouse.html';
       }
       window.location.href = target;
     }
