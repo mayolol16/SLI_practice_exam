@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SL&I 3 Practice Exam Set 5 (60 Questions — Curricular Objectives Bank) - UB Learns Final Prep</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0b1120;
+      --bg-secondary: #131d31;
+      --bg-card: #18233a;
+      --bg-hover: #223252;
+      --border-color: #263859;
+      --border-light: #374e79;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --success: #10b981;
+      --success-glow: rgba(16, 185, 129, 0.2);
+      --error: #f43f5e;
+      --error-glow: rgba(244, 63, 94, 0.2);
+      --warning: #f59e0b;
+      --warning-glow: rgba(245, 158, 11, 0.2);
+      --purple: #a855f7;
+      --purple-glow: rgba(168, 85, 247, 0.25);
+      --indigo: #6366f1;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.6);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --bg-hover: #f1f5f9;
+      --border-color: #e2e8f0;
+      --border-light: #cbd5e1;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-dim: #94a3b8;
+      --accent: #0284c7;
+      --accent-glow: rgba(2, 132, 199, 0.2);
+      --success: #059669;
+      --success-glow: rgba(5, 150, 105, 0.15);
+      --error: #e11d48;
+      --error-glow: rgba(225, 29, 72, 0.15);
+      --warning: #d97706;
+      --warning-glow: rgba(217, 119, 6, 0.2);
+      --purple: #9333ea;
+      --purple-glow: rgba(147, 51, 234, 0.2);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Header */
+    .exam-header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      height: 64px;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+      z-index: 50;
+    }
+
+    .header-left, .header-center, .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+
+    .brand-title svg {
+      color: var(--accent);
+    }
+
+    .brand-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .set-picker {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      margin-left: 6px;
+    }
+
+    .set-pill-btn {
+      padding: 3px 10px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-block;
+    }
+
+    .set-pill-btn:hover {
+      color: var(--text-main);
+    }
+
+    .set-pill-btn.active {
+      background: var(--accent);
+      color: #0b1120;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    }
+
+    /* Mode Pill Toggle */
+    .mode-toggle-container {
+      display: flex;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .mode-btn {
+      padding: 4px 12px;
+      border-radius: 18px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mode-btn.active {
+      background: var(--accent);
+      color: #0b1120;
+      font-weight: 700;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Buttons */
+    .btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 7px 13px;
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.18s ease;
+      font-family: inherit;
+    }
+
+    .btn:hover {
+      background: var(--bg-hover);
+      border-color: var(--border-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-icon {
+      padding: 7px 9px;
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #0b1120;
+      border-color: transparent;
+    }
+    .btn-accent:hover {
+      background: #7dd3fc;
+      border-color: transparent;
+      color: #0b1120;
+    }
+
+    .btn-purple {
+      background: var(--purple);
+      color: #ffffff;
+      border-color: transparent;
+    }
+    .btn-purple:hover {
+      background: #c084fc;
+      border-color: transparent;
+    }
+
+    .btn-error {
+      background: var(--error);
+      color: #ffffff;
+      border-color: transparent;
+    }
+    .btn-error:hover {
+      background: #fb7185;
+      border-color: transparent;
+    }
+
+    .btn.active-tool {
+      background: #facc15 !important;
+      color: #0b1120 !important;
+      border-color: #facc15 !important;
+      box-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+    }
+
+    /* Timer */
+    .timer-box {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+    .timer-box svg {
+      color: var(--accent);
+    }
+
+    /* Category Tray */
+    .category-tray {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+      padding: 8px 20px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      flex-shrink: 0;
+      white-space: nowrap;
+      scrollbar-width: thin;
+    }
+
+    .cat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      user-select: none;
+    }
+
+    .cat-pill:hover {
+      background: var(--bg-hover);
+      color: var(--text-main);
+      border-color: var(--border-light);
+    }
+
+    .cat-pill.active {
+      background: var(--accent);
+      color: #0b1120;
+      border-color: var(--accent);
+      font-weight: 700;
+      box-shadow: 0 2px 8px var(--accent-glow);
+    }
+
+    .cat-pill-count {
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      padding: 2px 6px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.25);
+    }
+    .cat-pill.active .cat-pill-count {
+      background: rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+    }
+
+    /* Layout: Question on Left/Center, Question Navigator on RIGHT */
+    .exam-layout {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 114px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Main Question View */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 24px 32px 100px 32px;
+      position: relative;
+    }
+
+    .question-wrapper {
+      max-width: 860px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* Question Header Bar - NO GIVEAWAY TAGS */
+    .question-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .q-meta-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .q-badge {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--bg-card);
+      padding: 4px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+    }
+
+    .btn-flag {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .btn-flag:hover {
+      background: var(--bg-hover);
+      color: var(--text-main);
+    }
+
+    .btn-flag.flagged {
+      background: var(--warning-glow);
+      border-color: var(--warning);
+      color: var(--warning);
+      font-weight: 600;
+    }
+
+    /* Question Stem Card - Clean & Punchy */
+    .stem-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      user-select: text;
+      position: relative;
+    }
+
+    /* User Highlights */
+    .user-highlight {
+      background-color: rgba(253, 224, 71, 0.45);
+      color: inherit;
+      padding: 2px 3px;
+      border-radius: 3px;
+      cursor: pointer;
+      border-bottom: 2px solid #eab308;
+      transition: background-color 0.15s ease;
+    }
+
+    .user-highlight:hover {
+      background-color: rgba(253, 224, 71, 0.7);
+    }
+
+    /* Floating Highlight Tooltip */
+    .highlight-tooltip {
+      position: absolute;
+      display: none;
+      background: #1e293b;
+      border: 1px solid #facc15;
+      color: #f8fafc;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      z-index: 1000;
+      cursor: pointer;
+      user-select: none;
+      transform: translate(-50%, -100%);
+      margin-top: -8px;
+    }
+
+    .highlight-tooltip:hover {
+      background: #facc15;
+      color: #0b1120;
+    }
+
+    /* Options List - Parallel, Balanced & Reduced */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option-item {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      position: relative;
+    }
+
+    .option-item:hover:not(.disabled) {
+      border-color: var(--accent);
+      background: var(--bg-hover);
+      transform: translateX(2px);
+    }
+
+    .option-item.selected {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+    }
+
+    .option-item.struck {
+      opacity: 0.4;
+      text-decoration: line-through;
+    }
+
+    .option-item.state-correct {
+      border-color: var(--success) !important;
+      background: var(--success-glow) !important;
+    }
+
+    .option-item.state-incorrect {
+      border-color: var(--error) !important;
+      background: var(--error-glow) !important;
+    }
+
+    .option-letter {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      border: 1.5px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .option-item:hover:not(.disabled) .option-letter {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .option-item.selected .option-letter {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #0b1120;
+    }
+
+    .option-item.state-correct .option-letter {
+      border-color: var(--success);
+      background: var(--success);
+      color: #0b1120;
+    }
+
+    .option-item.state-incorrect .option-letter {
+      border-color: var(--error);
+      background: var(--error);
+      color: #ffffff;
+    }
+
+    .option-text {
+      flex: 1;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: var(--text-main);
+    }
+
+    .strike-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      padding: 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      opacity: 0.4;
+      transition: opacity 0.15s ease;
+    }
+
+    .strike-btn:hover {
+      opacity: 1;
+      color: var(--error);
+    }
+
+    /* Explanation Card */
+    .explanation-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow-md);
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .exp-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+    }
+
+    .exp-status.correct {
+      background: var(--success-glow);
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
+
+    .exp-status.incorrect {
+      background: var(--error-glow);
+      color: var(--error);
+      border: 1px solid var(--error);
+    }
+
+    /* Revealed Curricular Tag - shown ONLY after answering */
+    .exp-topic-pill {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pearl-card {
+      background: rgba(56, 189, 248, 0.08);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 14px 18px;
+    }
+
+    .pearl-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .pearl-text {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .exp-section-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-text {
+      font-size: 0.94rem;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+
+    .distractor-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .distractor-item {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 0.88rem;
+    }
+
+    .distractor-item.is-correct {
+      border-left: 4px solid var(--success);
+      background: rgba(16, 185, 129, 0.05);
+    }
+
+    .distractor-item.is-incorrect {
+      border-left: 4px solid var(--error);
+      background: rgba(244, 63, 94, 0.04);
+    }
+
+    .distractor-letter-badge {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      flex-shrink: 0;
+    }
+    .distractor-item.is-correct .distractor-letter-badge {
+      background: var(--success);
+      color: #0b1120;
+    }
+    .distractor-item.is-incorrect .distractor-letter-badge {
+      background: var(--border-color);
+      color: var(--text-muted);
+    }
+
+    .distractor-content {
+      flex: 1;
+      line-height: 1.45;
+    }
+
+    /* RIGHT SIDEBAR: Question Navigator Panel */
+    .exam-sidebar {
+      width: 320px;
+      background: var(--bg-secondary);
+      border-left: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      transition: width 0.24s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .exam-sidebar.collapsed {
+      width: 0;
+      border-left: none;
+    }
+
+    .sidebar-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+    }
+
+    .sidebar-header h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-main);
+    }
+
+    .sidebar-content {
+      padding: 14px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .nav-grid-box {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      max-height: 380px;
+      overflow-y: auto;
+      padding: 2px;
+    }
+
+    .grid-btn {
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-muted);
+      position: relative;
+      transition: all 0.12s ease;
+    }
+
+    .grid-btn:hover {
+      border-color: var(--accent);
+      color: var(--text-main);
+      transform: scale(1.06);
+    }
+
+    .grid-btn.current {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      font-weight: 800;
+      box-shadow: 0 0 8px var(--accent-glow);
+    }
+
+    .grid-btn.answered-exam {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .grid-btn.correct {
+      background: var(--success-glow);
+      border-color: var(--success);
+      color: var(--success);
+    }
+
+    .grid-btn.incorrect {
+      background: var(--error-glow);
+      border-color: var(--error);
+      color: var(--error);
+    }
+
+    .grid-btn.flagged::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--warning);
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+    }
+
+    .stat-value {
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: var(--text-main);
+    }
+
+    /* Sticky Bottom Nav Bar - Question Changing on RIGHT */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
+      z-index: 40;
+    }
+
+    .nav-left, .nav-center, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Modals */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 820px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      animation: modalFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalFade {
+      from { transform: scale(0.96); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-secondary);
+    }
+
+    .modal-header h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .modal-content {
+      padding: 20px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    /* Score Report Cards */
+    .score-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .score-stat-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .score-stat-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      margin-bottom: 4px;
+    }
+
+    .score-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .domain-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-bottom: 20px;
+    }
+
+    .domain-table th, .domain-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .domain-table th {
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .domain-table tr:hover td {
+      background: var(--bg-hover);
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 84px;
+      right: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--accent);
+      color: var(--text-main);
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 200;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 0.25s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .exam-sidebar {
+        display: none;
+      }
+      .main-content {
+        padding: 16px 16px 100px 16px;
+      }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+
+  <!-- Header -->
+  <header class="exam-header">
+    <div class="header-left">
+      <div class="brand-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <span>SL&I 3 Practice Exam</span>
+        <span class="brand-badge">UB Final Prep</span>
+        <div class="set-picker">
+          <a href="index.html" onclick="navigateToSet(1, event)" class="set-pill-btn " id="set1NavBtn" title="Load Set 1 (120 Questions)">Set 1 (120Q)</a>
+          <a href="exam2.html" onclick="navigateToSet(2, event)" class="set-pill-btn " id="set2NavBtn" title="Load Set 2 (120 Questions)">Set 2 (120Q)</a>
+          <a href="exam3.html" onclick="navigateToSet(3, event)" class="set-pill-btn " id="set3NavBtn" title="Load Set 3 (60 Questions - Official Exam Format)">Set 3 (60Q)</a>
+          <a href="exam4.html" onclick="navigateToSet(4, event)" class="set-pill-btn " id="set4NavBtn" title="Load Set 4 (60 Questions - Official Exam Format)">Set 4 (60Q)</a>
+          <a href="exam5.html" onclick="navigateToSet(5, event)" class="set-pill-btn active" id="set5NavBtn" title="Load Set 5 (60 Questions — Curricular Objectives Bank)">Set 5 (60Q)</a>
+          <a href="inhouse.html" onclick="navigateToSet(6, event)" class="set-pill-btn " id="set6NavBtn" title="Load In-House Exam (60 Questions — Quizzes & Lectures)">In-House (60Q)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <div class="mode-toggle-container">
+        <button class="mode-btn active" id="modeTutorBtn" onclick="setMode('tutor')" title="Immediate feedback on selection">Tutor Mode</button>
+        <button class="mode-btn" id="modeExamBtn" onclick="setMode('exam')" title="Timed block, answers revealed after submission">Exam Mode</button>
+      </div>
+
+      <div class="timer-box" onclick="toggleTimer()" title="Click to Pause/Resume Timer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span id="timerDisplay">00:00</span>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button class="btn" id="highlighterToggleBtn" onclick="toggleHighlighterMode()" title="Toggle Text Highlighter (Shortcut H)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11-6 6v3h3l6-6"/><path d="m22 2-2.5 2.5a2.12 2.12 0 0 1-3 0l-1-1a2.12 2.12 0 0 1 0-3L18 0l4 2z"/></svg>
+        <span>Highlight (H)</span>
+      </button>
+      <button class="btn" id="strikethroughToggleBtn" onclick="toggleStrikethroughMode()" title="Toggle Elimination Tool (Shortcut S)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4H9a3 3 0 0 0-2.83 4"/><path d="M14 12v.01"/><path d="M17.5 12a4.5 4.5 0 0 1-4.5 4.5H8"/><line x1="4" y1="12" x2="20" y2="12"/></svg>
+        <span>Cross-Out (S)</span>
+      </button>
+      <button class="btn" onclick="toggleSidebar()" title="Toggle Question Navigator on Right">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>Navigator</span>
+      </button>
+      <button class="btn btn-purple" onclick="openScoreReport()" title="View Performance Scorecard (Shortcut R)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <span>Scorecard</span>
+      </button>
+      <button class="btn btn-icon" onclick="toggleTheme()" title="Switch Light/Dark Mode">
+        <svg id="themeIconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="themeIconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Category Filter Tray -->
+  <nav class="category-tray" id="categoryTray">
+    <!-- Populated by JS -->
+  </nav>
+
+  <!-- Main Layout: Question in Center/Left, Navigator on RIGHT -->
+  <div class="exam-layout">
+    <!-- Main Question View -->
+    <main class="main-content" id="mainExamContent">
+      <div class="question-wrapper">
+        <!-- Question Meta Bar: NO GIVEAWAYS -->
+        <div class="question-meta-bar">
+          <div class="q-meta-left">
+            <span class="q-badge" id="qBadgeText">Question 1 of 60</span>
+          </div>
+          <button class="btn-flag" id="flagBtn" onclick="toggleFlagCurrentQuestion()" title="Flag for Review (Shortcut F)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            <span id="flagBtnText">Flag Question</span>
+          </button>
+        </div>
+
+        <!-- Question Stem -->
+        <div class="stem-card" id="questionStemText">
+          Loading question stem...
+        </div>
+
+        <!-- Floating Highlight Tooltip -->
+        <div class="highlight-tooltip" id="highlightTooltip" onclick="applySelectionHighlight()">
+          🖍️ Highlight Selected
+        </div>
+
+        <!-- Options Container -->
+        <div class="options-list" id="optionsList">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Explanation Card -->
+        <div class="explanation-card" id="explanationCard">
+          <div class="exp-status" id="expStatusText">
+            <!-- Correct / Incorrect banner -->
+          </div>
+
+          <!-- Curricular Tag revealed only after answering -->
+          <div>
+            <div class="exp-topic-pill" id="expTopicPill">
+              <span id="expCategoryText" style="color:var(--accent); font-weight:700;"></span> &bull; 
+              <span id="expSubtopicText"></span>
+            </div>
+          </div>
+
+          <div class="pearl-card" id="pearlCard">
+            <div class="pearl-header">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v1"/><path d="M12 21v1"/><path d="M4.22 4.22l.71.71"/><path d="M18.36 18.36l.71.71"/><path d="M1 12h1"/><path d="M21 12h1"/><path d="M4.22 19.78l.71-.71"/><path d="M18.36 5.64l.71-.71"/><circle cx="12" cy="12" r="5"/></svg>
+              <span>High-Yield Concept & Learning Objective</span>
+            </div>
+            <div class="pearl-text" id="pearlText"></div>
+          </div>
+
+          <div>
+            <div class="exp-section-title">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Comprehensive Rationale</span>
+            </div>
+            <div class="exp-text" id="explanationBody"></div>
+          </div>
+
+          <div>
+            <div class="exp-section-title">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Option-by-Option Distractor Breakdown</span>
+            </div>
+            <div class="distractor-grid" id="distractorList"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- RIGHT SIDEBAR: Question Navigator Panel -->
+    <aside class="exam-sidebar" id="examSidebar">
+      <div class="sidebar-header">
+        <h3>Question Navigator</h3>
+        <span id="sidebarOverallProgress" style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--accent); font-weight: 700;">0/60</span>
+      </div>
+      <div class="sidebar-content">
+        <div class="stat-card">
+          <div class="stat-row">
+            <span class="stat-label">Progress</span>
+            <span class="stat-value" id="sideCompletedVal">0 / 60</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Accuracy</span>
+            <span class="stat-value" id="sideAccuracyVal">0%</span>
+          </div>
+        </div>
+
+        <div style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">
+          Quick Jump (Questions 1 - 60)
+        </div>
+        <div class="nav-grid-box" id="sidebarQuestionGrid">
+          <!-- 60 Question Buttons -->
+        </div>
+
+        <!-- Hotkeys -->
+        <div class="stat-card" style="font-size: 0.74rem; margin-top: auto;">
+          <div style="font-weight:700; color:var(--text-dim); text-transform:uppercase; margin-bottom:2px;">Shortcuts</div>
+          <div class="stat-row"><span class="stat-label">1 - 5 / A - E</span><span class="stat-value">Choose Option</span></div>
+          <div class="stat-row"><span class="stat-label">H</span><span class="stat-value">Highlight</span></div>
+          <div class="stat-row"><span class="stat-label">S</span><span class="stat-value">Cross-Out</span></div>
+          <div class="stat-row"><span class="stat-label">F</span><span class="stat-value">Flag</span></div>
+          <div class="stat-row"><span class="stat-label">&larr; / P, &rarr; / N</span><span class="stat-value">Prev / Next</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Sticky Bottom Navigation: Controls on RIGHT -->
+  <footer class="bottom-nav">
+    <div class="nav-left">
+      <button class="btn btn-purple" id="examSubmitBtn" style="display:none;" onclick="submitExamBlock()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>Submit Exam Block</span>
+      </button>
+      <button class="btn" onclick="openScoreReport()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <span>View Scorecard</span>
+      </button>
+    </div>
+
+    <div class="nav-center">
+      <span id="navProgressBadge" style="font-family:var(--font-mono); font-size:0.85rem; font-weight:700; color:var(--text-muted);">Q 1 / 60</span>
+    </div>
+
+    <!-- Question Changing Controls on the RIGHT -->
+    <div class="nav-right">
+      <button class="btn" id="prevBtn" onclick="prevQuestion()" title="Previous Question (Shortcut Left Arrow or P)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>Previous</span>
+      </button>
+      <button class="btn btn-accent" id="nextBtn" onclick="nextQuestion()" title="Next Question (Shortcut Right Arrow or N)">
+        <span>Next Question</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Scorecard Modal -->
+  <div class="modal-backdrop" id="scoreModal" onclick="closeScoreReport(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <h3>Final Examination Scorecard & Diagnostic Report</h3>
+        </div>
+        <button class="btn btn-icon" onclick="closeScoreReportDirect()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-content">
+        <div class="score-summary-grid">
+          <div class="score-stat-card">
+            <div class="score-stat-num" id="reportAccuracyVal" style="color:var(--accent);">0%</div>
+            <div class="score-stat-label">Accuracy</div>
+          </div>
+          <div class="score-stat-card">
+            <div class="score-stat-num" id="reportCorrectCount" style="color:var(--success);">0</div>
+            <div class="score-stat-label">Correct</div>
+          </div>
+          <div class="score-stat-card">
+            <div class="score-stat-num" id="reportIncorrectCount" style="color:var(--error);">0</div>
+            <div class="score-stat-label">Incorrect</div>
+          </div>
+          <div class="score-stat-card">
+            <div class="score-stat-num" id="reportAnsweredCount" style="color:var(--text-main);">0 / 60</div>
+            <div class="score-stat-label">Completed</div>
+          </div>
+        </div>
+
+        <h4 style="font-size:0.85rem; font-weight:700; text-transform:uppercase; margin-bottom:12px; color:var(--text-muted);">
+          Performance Across the 3 Core Curricular Domains (20 Qs Each)
+        </h4>
+        <table class="domain-table">
+          <thead>
+            <tr>
+              <th>Curricular Domain</th>
+              <th>Completed</th>
+              <th>Correct</th>
+              <th>Score %</th>
+            </tr>
+          </thead>
+          <tbody id="reportDomainTableBody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+
+        <div style="margin-top:24px; padding-top:16px; border-top:1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <button class="btn btn-error" onclick="resetExamProgress()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            <span>Reset Exam Progress</span>
+          </button>
+          <button class="btn btn-purple" onclick="closeScoreReportDirect(); openGeminiModal();">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>Generate Targeted Review Prompt</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Targeted Review Prompt Modal -->
+  <div class="modal-backdrop" id="geminiModal" onclick="closeGeminiModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <h3>Targeted Study Prompt (Missed Topics Drill)</h3>
+        </div>
+        <button class="btn btn-icon" onclick="closeGeminiModalDirect()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-content">
+        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:12px; line-height:1.5;">
+          This prompt compiles every question and specific subtopic you missed on the exam. Copy and paste it directly into Gemini or ChatGPT to drill high-yield clinical vignettes.
+        </p>
+        <textarea id="geminiPromptTextarea" rows="12" readonly style="width:100%; font-family:var(--font-mono); font-size:0.84rem; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--border-color); border-radius:var(--radius-sm); color:var(--text-main); line-height:1.5; resize:vertical; margin-bottom:16px;"></textarea>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="btn btn-purple" onclick="copyGeminiPrompt()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>Copy Prompt to Clipboard</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toastBox">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toastMsg">Notification</span>
+  </div>
+
+  <script>
+    // --- Master 120 Questions Data ---
+    const ALL_QUESTIONS = [{"id": 1, "q_num": "1", "category": "Behavioral Economics", "subtopic": "Need for insurance", "question": "Medical expenditures are best described as:", "options": [{"id": "A", "text": "Predictable and symmetric"}, {"id": "B", "text": "Uncertain and right-skewed"}, {"id": "C", "text": "Certain and left-skewed"}, {"id": "D", "text": "Uniform across people"}], "correct_answer": "B", "key_concept": "Health Spending Skewness", "explanation": "Uncertain, variable, right-skewed spending. Healthcare spending is highly right-skewed and unpredictable: the top 5% of spenders account for roughly 50% of all healthcare spending, while the bottom 50% account for only about 3%.", "distractors": {"A": "Incorrect. 'Predictable and symmetric' is not the correct response; the correct answer is B (Uncertain, variable, right-skewed spending).", "B": "Correct. Uncertain, variable, right-skewed spending. Healthcare spending is highly right-skewed and unpredictable: the top 5% of spenders account for roughly 50% of all healthcare spending, while the bottom 50% account for only about 3%.", "C": "Incorrect. 'Certain and left-skewed' is not the correct response; the correct answer is B (Uncertain, variable, right-skewed spending).", "D": "Incorrect. 'Uniform across people' is not the correct response; the correct answer is B (Uncertain, variable, right-skewed spending)."}}, {"id": 2, "q_num": "2", "category": "Behavioral Economics", "subtopic": "Health economics i", "question": "The primary purpose of health insurance is to:", "options": [{"id": "A", "text": "Return the patient to health"}, {"id": "B", "text": "Lower the price of care"}, {"id": "C", "text": "Reduce income variance (consumption smoothing)"}, {"id": "D", "text": "Increase use of services"}], "correct_answer": "C", "key_concept": "Primary Purpose of Health Insurance", "explanation": "Insurance spreads financial risk and smooths consumption. Health insurance exists to spread financial risk and smooth income/consumption across healthy and sick states, protecting risk-averse individuals from catastrophic variance.", "distractors": {"A": "Incorrect. 'Return the patient to health' is not the correct response; the correct answer is C (Insurance spreads financial risk and smooths consumption).", "B": "Incorrect. 'Lower the price of care' is not the correct response; the correct answer is C (Insurance spreads financial risk and smooths consumption).", "C": "Correct. Insurance spreads financial risk and smooths consumption. Health insurance exists to spread financial risk and smooth income/consumption across healthy and sick states, protecting risk-averse individuals from catastrophic variance.", "D": "Incorrect. 'Increase use of services' is not the correct response; the correct answer is C (Insurance spreads financial risk and smooths consumption)."}}, {"id": 3, "q_num": "3", "category": "Behavioral Economics", "subtopic": "Moral hazard", "question": "A person drives recklessly because insurance will cover injuries. This is:", "options": [{"id": "A", "text": "Ex post moral hazard"}, {"id": "B", "text": "Ex ante moral hazard"}, {"id": "C", "text": "Adverse selection"}, {"id": "D", "text": "Cream-skimming"}], "correct_answer": "B", "key_concept": "Ex Ante Moral Hazard", "explanation": "Ex ante: behavior changes the probability of the event. Ex ante moral hazard occurs before the event: having insurance reduces precaution and changes personal behavior in a way that increases the probability of an adverse health event occurring.", "distractors": {"A": "Incorrect. 'Ex post moral hazard' is not the correct response; the correct answer is B (Ex ante: behavior changes the probability of the event).", "B": "Correct. Ex ante: behavior changes the probability of the event. Ex ante moral hazard occurs before the event: having insurance reduces precaution and changes personal behavior in a way that increases the probability of an adverse health event occurring.", "C": "Incorrect. 'Adverse selection' is not the correct response; the correct answer is B (Ex ante: behavior changes the probability of the event).", "D": "Incorrect. 'Cream-skimming' is not the correct response; the correct answer is B (Ex ante: behavior changes the probability of the event)."}}, {"id": 4, "q_num": "4", "category": "Behavioral Economics", "subtopic": "Health economics i", "question": "After a minor injury, an insured patient requests extra imaging they wouldn't buy at full price. This is:", "options": [{"id": "A", "text": "Ex ante moral hazard"}, {"id": "B", "text": "Adverse selection"}, {"id": "C", "text": "Ex post moral hazard"}, {"id": "D", "text": "Secondary risk"}], "correct_answer": "C", "key_concept": "Ex Post Moral Hazard", "explanation": "Ex post: more use after the event because of lower price. Ex post moral hazard occurs after the health event: having insurance lowers the out-of-pocket marginal price at the point of care, inducing patients to consume more healthcare services than if they paid full price.", "distractors": {"A": "Incorrect. 'Ex ante moral hazard' is not the correct response; the correct answer is C (Ex post: more use after the event because of lower price).", "B": "Incorrect. 'Adverse selection' is not the correct response; the correct answer is C (Ex post: more use after the event because of lower price).", "C": "Correct. Ex post: more use after the event because of lower price. Ex post moral hazard occurs after the health event: having insurance lowers the out-of-pocket marginal price at the point of care, inducing patients to consume more healthcare services than if they paid full price.", "D": "Incorrect. 'Secondary risk' is not the correct response; the correct answer is C (Ex post: more use after the event because of lower price)."}}, {"id": 5, "q_num": "5", "category": "Behavioral Economics", "subtopic": "Health economics i", "question": "The maximum a patient pays out-of-pocket in a year is the:", "options": [{"id": "A", "text": "Deductible"}, {"id": "B", "text": "Coinsurance rate"}, {"id": "C", "text": "Co-pay"}, {"id": "D", "text": "Stop-loss"}], "correct_answer": "D", "key_concept": "Stop-Loss / OOP Maximum", "explanation": "Stop-loss = out-of-pocket maximum. The stop-loss limit (out-of-pocket maximum) is the maximum dollar amount a patient is legally obligated to pay in covered expenses during a benefit year, after which the insurer pays 100%.", "distractors": {"A": "Incorrect. 'Deductible' is not the correct response; the correct answer is D (Stop-loss = out-of-pocket maximum).", "B": "Incorrect. 'Coinsurance rate' is not the correct response; the correct answer is D (Stop-loss = out-of-pocket maximum).", "C": "Incorrect. 'Co-pay' is not the correct response; the correct answer is D (Stop-loss = out-of-pocket maximum).", "D": "Correct. Stop-loss = out-of-pocket maximum. The stop-loss limit (out-of-pocket maximum) is the maximum dollar amount a patient is legally obligated to pay in covered expenses during a benefit year, after which the insurer pays 100%."}}, {"id": 6, "q_num": "6", "category": "Behavioral Economics", "subtopic": "Health economics i", "question": "Tamblyn et al. (Quebec drug cost-sharing) found that reduced use of essential drugs was linked to:", "options": [{"id": "A", "text": "Fewer ER visits"}, {"id": "B", "text": "More adverse events and ER visits"}, {"id": "C", "text": "No change in outcomes"}, {"id": "D", "text": "Reduced use of only non-essential drugs"}], "correct_answer": "B", "key_concept": "Cost-Sharing & Essential Drugs (Tamblyn)", "explanation": "Offset effects and dose-response in Tamblyn. The Tamblyn et al. study in Quebec demonstrated that introducing cost-sharing caused vulnerable patients to reduce both non-essential and essential medications, resulting in increased adverse events and hospitalizations (offset effect).", "distractors": {"A": "Incorrect. 'Fewer ER visits' is not the correct response; the correct answer is B (Offset effects and dose-response in Tamblyn).", "B": "Correct. Offset effects and dose-response in Tamblyn. The Tamblyn et al. study in Quebec demonstrated that introducing cost-sharing caused vulnerable patients to reduce both non-essential and essential medications, resulting in increased adverse events and hospitalizations (offset effect).", "C": "Incorrect. 'No change in outcomes' is not the correct response; the correct answer is B (Offset effects and dose-response in Tamblyn).", "D": "Incorrect. 'Reduced use of only non-essential drugs' is not the correct response; the correct answer is B (Offset effects and dose-response in Tamblyn)."}}, {"id": 7, "q_num": "7", "category": "Behavioral Economics", "subtopic": "Health economics i", "question": "Canada's waiting times deter overuse. This is an example of:", "options": [{"id": "A", "text": "Gatekeeping"}, {"id": "B", "text": "Capacity control"}, {"id": "C", "text": "Risk adjustment"}, {"id": "D", "text": "Coinsurance"}], "correct_answer": "B", "key_concept": "Non-Price Rationing (Queuing)", "explanation": "Supply-side capacity control. When healthcare has zero price at the point of care, moral hazard drives high demand; systems like Canada's manage this through supply-side capacity constraints (surgical queues and waiting lists).", "distractors": {"A": "Incorrect. 'Gatekeeping' is not the correct response; the correct answer is B (Supply-side capacity control).", "B": "Correct. Supply-side capacity control. When healthcare has zero price at the point of care, moral hazard drives high demand; systems like Canada's manage this through supply-side capacity constraints (surgical queues and waiting lists).", "C": "Incorrect. 'Risk adjustment' is not the correct response; the correct answer is B (Supply-side capacity control).", "D": "Incorrect. 'Coinsurance' is not the correct response; the correct answer is B (Supply-side capacity control)."}}, {"id": 8, "q_num": "8", "category": "Behavioral Economics", "subtopic": "Adverse selection", "question": "Adverse selection occurs when:", "options": [{"id": "A", "text": "Healthier people mostly join the plan"}, {"id": "B", "text": "Insurers deny all claims"}, {"id": "C", "text": "Sicker, higher-cost people mostly join the plan"}, {"id": "D", "text": "Patients overuse care after enrolling"}], "correct_answer": "C", "key_concept": "Mechanics of Adverse Selection", "explanation": "Sicker people disproportionately enroll. Adverse selection occurs when individuals with higher expected healthcare costs disproportionately enroll in more generous health plans due to asymmetric information, driving up premiums.", "distractors": {"A": "Incorrect. 'Healthier people mostly join the plan' is not the correct response; the correct answer is C (Sicker people disproportionately enroll).", "B": "Incorrect. 'Insurers deny all claims' is not the correct response; the correct answer is C (Sicker people disproportionately enroll).", "C": "Correct. Sicker people disproportionately enroll. Adverse selection occurs when individuals with higher expected healthcare costs disproportionately enroll in more generous health plans due to asymmetric information, driving up premiums.", "D": "Incorrect. 'Patients overuse care after enrolling' is not the correct response; the correct answer is C (Sicker people disproportionately enroll)."}}, {"id": 9, "q_num": "9", "category": "Behavioral Economics", "subtopic": "Health economics i", "question": "Five people have willingness to pay of $11, $56, $115, $175, $300. The premium is $112. Who buys?", "options": [{"id": "A", "text": "Persons 3, 4, 5"}, {"id": "B", "text": "All five"}, {"id": "C", "text": "Persons 4, 5 only"}, {"id": "D", "text": "Person 5 only"}], "correct_answer": "A", "key_concept": "Willingness to Pay & Death Spiral", "explanation": "WTP ≥ 112 for persons 3, 4, 5 (115, 175, 300). If the community premium is set to the average expected cost of the group ($112), only individuals whose willingness to pay meets or exceeds $112 will purchase it (persons 3, 4, 5 with WTP $115, $175, $300), leaving the two healthiest uninsured.", "distractors": {"A": "Correct. WTP ≥ 112 for persons 3, 4, 5 (115, 175, 300). If the community premium is set to the average expected cost of the group ($112), only individuals whose willingness to pay meets or exceeds $112 will purchase it (persons 3, 4, 5 with WTP $115, $175, $300), leaving the two healthiest uninsured.", "B": "Incorrect. 'All five' is not the correct response; the correct answer is A (WTP ≥ 112 for persons 3, 4, 5 (115, 175, 300)).", "C": "Incorrect. 'Persons 4, 5 only' is not the correct response; the correct answer is A (WTP ≥ 112 for persons 3, 4, 5 (115, 175, 300)).", "D": "Incorrect. 'Person 5 only' is not the correct response; the correct answer is A (WTP ≥ 112 for persons 3, 4, 5 (115, 175, 300))."}}, {"id": 10, "q_num": "10", "category": "Behavioral Economics", "subtopic": "Strategies", "question": "Which is NOT a strategy to reduce adverse selection?", "options": [{"id": "A", "text": "Risk adjustment"}, {"id": "B", "text": "Group insurance"}, {"id": "C", "text": "Individual mandate"}, {"id": "D", "text": "Adverse tiering of drugs"}], "correct_answer": "D", "key_concept": "Strategies for Adverse Selection", "explanation": "Adverse tiering is a way insurers worsen selection. Adverse tiering is an insurer formulary design that worsens selection by placing essential chronic drugs into high cost-sharing tiers to repel sick patients. Strategies to reduce adverse selection include mandates, open enrollment, and risk adjustment.", "distractors": {"A": "Incorrect. 'Risk adjustment' is not the correct response; the correct answer is D (Adverse tiering is a way insurers worsen selection).", "B": "Incorrect. 'Group insurance' is not the correct response; the correct answer is D (Adverse tiering is a way insurers worsen selection).", "C": "Incorrect. 'Individual mandate' is not the correct response; the correct answer is D (Adverse tiering is a way insurers worsen selection).", "D": "Correct. Adverse tiering is a way insurers worsen selection. Adverse tiering is an insurer formulary design that worsens selection by placing essential chronic drugs into high cost-sharing tiers to repel sick patients. Strategies to reduce adverse selection include mandates, open enrollment, and risk adjustment."}}, {"id": 11, "q_num": "11", "category": "Behavioral Economics", "subtopic": "Private insurance", "question": "The 1954 IRS ruling that employer-paid benefits are not taxable income:", "options": [{"id": "A", "text": "Reduced job-based coverage"}, {"id": "B", "text": "Increased the value of job-based insurance"}, {"id": "C", "text": "Created Medicare"}, {"id": "D", "text": "Banned self-insurance"}], "correct_answer": "B", "key_concept": "Employer Health Tax Exclusion", "explanation": "Tax exclusion made job-based insurance more valuable. The 1954 IRS ruling excluded employer-paid health benefits from employee taxable income, creating a massive tax subsidy that solidified employer-sponsored group health insurance in the US.", "distractors": {"A": "Incorrect. 'Reduced job-based coverage' is not the correct response; the correct answer is B (Tax exclusion made job-based insurance more valuable).", "B": "Correct. Tax exclusion made job-based insurance more valuable. The 1954 IRS ruling excluded employer-paid health benefits from employee taxable income, creating a massive tax subsidy that solidified employer-sponsored group health insurance in the US.", "C": "Incorrect. 'Created Medicare' is not the correct response; the correct answer is B (Tax exclusion made job-based insurance more valuable).", "D": "Incorrect. 'Banned self-insurance' is not the correct response; the correct answer is B (Tax exclusion made job-based insurance more valuable)."}}, {"id": 12, "q_num": "12", "category": "Behavioral Economics", "subtopic": "Health economics ii", "question": "In a self-insured employer plan:", "options": [{"id": "A", "text": "The insurer bears the risk"}, {"id": "B", "text": "The government bears the risk"}, {"id": "C", "text": "The employee bears all risk"}, {"id": "D", "text": "The employer bears the risk"}], "correct_answer": "D", "key_concept": "Self-Insured Employer Plans", "explanation": "Self-insured: employer takes the risk. In a self-insured (self-funded) employer plan, the employer bears the direct financial risk of employee medical claims, often hiring a third-party administrator (TPA) for claims processing and purchasing stop-loss coverage.", "distractors": {"A": "Incorrect. 'The insurer bears the risk' is not the correct response; the correct answer is D (Self-insured: employer takes the risk).", "B": "Incorrect. 'The government bears the risk' is not the correct response; the correct answer is D (Self-insured: employer takes the risk).", "C": "Incorrect. 'The employee bears all risk' is not the correct response; the correct answer is D (Self-insured: employer takes the risk).", "D": "Correct. Self-insured: employer takes the risk. In a self-insured (self-funded) employer plan, the employer bears the direct financial risk of employee medical claims, often hiring a third-party administrator (TPA) for claims processing and purchasing stop-loss coverage."}}, {"id": 13, "q_num": "13", "category": "Behavioral Economics", "subtopic": "Health economics ii", "question": "Must use in-network providers, needs a PCP referral for specialists, no out-of-network coverage except emergencies. This is a:", "options": [{"id": "A", "text": "PPO"}, {"id": "B", "text": "EPO"}, {"id": "C", "text": "HMO"}, {"id": "D", "text": "POS"}], "correct_answer": "C", "key_concept": "Managed Care HMO Model", "explanation": "HMO. A Health Maintenance Organization (HMO) requires members to use in-network providers, requires a Primary Care Physician (PCP) gatekeeper referral to see specialists, and provides zero coverage for out-of-network care except emergencies.", "distractors": {"A": "Incorrect. 'PPO' is not the correct response; the correct answer is C (HMO).", "B": "Incorrect. 'EPO' is not the correct response; the correct answer is C (HMO).", "C": "Correct. HMO. A Health Maintenance Organization (HMO) requires members to use in-network providers, requires a Primary Care Physician (PCP) gatekeeper referral to see specialists, and provides zero coverage for out-of-network care except emergencies.", "D": "Incorrect. 'POS' is not the correct response; the correct answer is C (HMO)."}}, {"id": 14, "q_num": "14", "category": "Behavioral Economics", "subtopic": "Health economics ii", "question": "In Brot-Goldberg et al. (HDHP study), the 12–14% spending drop was due to:", "options": [{"id": "A", "text": "Price shopping"}, {"id": "B", "text": "Reduced quantity of care"}, {"id": "C", "text": "Substitution to cheaper services"}, {"id": "D", "text": "Lower provider prices"}], "correct_answer": "B", "key_concept": "High-Deductible Health Plans (Brot-Goldberg)", "explanation": "Reduced quantity, no price shopping. The Brot-Goldberg et al. study revealed that when shifted to HDHPs, employees reduced spending purely by cutting the quantity of care (both high-value and low-value), rather than price-shopping across providers.", "distractors": {"A": "Incorrect. 'Price shopping' is not the correct response; the correct answer is B (Reduced quantity, no price shopping).", "B": "Correct. Reduced quantity, no price shopping. The Brot-Goldberg et al. study revealed that when shifted to HDHPs, employees reduced spending purely by cutting the quantity of care (both high-value and low-value), rather than price-shopping across providers.", "C": "Incorrect. 'Substitution to cheaper services' is not the correct response; the correct answer is B (Reduced quantity, no price shopping).", "D": "Incorrect. 'Lower provider prices' is not the correct response; the correct answer is B (Reduced quantity, no price shopping)."}}, {"id": 15, "q_num": "15", "category": "Behavioral Economics", "subtopic": "Public insurance", "question": "Medicare is not \"means tested.\" This means:", "options": [{"id": "A", "text": "It covers only the poor"}, {"id": "B", "text": "It is run by states"}, {"id": "C", "text": "It requires a medical exam"}, {"id": "D", "text": "Eligibility does not depend on income"}], "correct_answer": "D", "key_concept": "Medicare Entitlement vs. Means Testing", "explanation": "Not means tested. Medicare is a federal social insurance entitlement program based on age (≥65) and payroll tax contributions (or disability/ESRD); it is not means-tested (eligibility is not restricted by income or assets).", "distractors": {"A": "Incorrect. 'It covers only the poor' is not the correct response; the correct answer is D (Not means tested).", "B": "Incorrect. 'It is run by states' is not the correct response; the correct answer is D (Not means tested).", "C": "Incorrect. 'It requires a medical exam' is not the correct response; the correct answer is D (Not means tested).", "D": "Correct. Not means tested. Medicare is a federal social insurance entitlement program based on age (≥65) and payroll tax contributions (or disability/ESRD); it is not means-tested (eligibility is not restricted by income or assets)."}}, {"id": 16, "q_num": "16", "category": "Behavioral Economics", "subtopic": "Health economics ii", "question": "Medicare Part C is:", "options": [{"id": "A", "text": "Hospital coverage"}, {"id": "B", "text": "Private plans combining Parts A and B (Medicare Advantage)"}, {"id": "C", "text": "Prescription drug coverage"}, {"id": "D", "text": "Outpatient physician coverage"}], "correct_answer": "B", "key_concept": "Medicare Part C (Advantage)", "explanation": "Part C = Medicare Advantage. Medicare Part C (Medicare Advantage) allows beneficiaries to enroll in private managed care plans (HMOs/PPOs) approved by CMS, often bundling Parts A, B, and D with extra benefits.", "distractors": {"A": "Incorrect. 'Hospital coverage' is not the correct response; the correct answer is B (Part C = Medicare Advantage).", "B": "Correct. Part C = Medicare Advantage. Medicare Part C (Medicare Advantage) allows beneficiaries to enroll in private managed care plans (HMOs/PPOs) approved by CMS, often bundling Parts A, B, and D with extra benefits.", "C": "Incorrect. 'Prescription drug coverage' is not the correct response; the correct answer is B (Part C = Medicare Advantage).", "D": "Incorrect. 'Outpatient physician coverage' is not the correct response; the correct answer is B (Part C = Medicare Advantage)."}}, {"id": 17, "q_num": "17", "category": "Behavioral Economics", "subtopic": "Health economics ii", "question": "ACA Medicaid expansion (in adopting states) covers adults below what level?", "options": [{"id": "A", "text": "100% FPL"}, {"id": "B", "text": "138% FPL"}, {"id": "C", "text": "200% FPL"}, {"id": "D", "text": "400% FPL"}], "correct_answer": "B", "key_concept": "Medicaid ACA Expansion Threshold", "explanation": "138% FPL. The ACA expanded Medicaid eligibility in adopting states to all non-elderly adults with household incomes up to 138% of the Federal Poverty Level (FPL) (133% plus a 5% standard income disregard).", "distractors": {"A": "Incorrect. '100% FPL' is not the correct response; the correct answer is B (138% FPL).", "B": "Correct. 138% FPL. The ACA expanded Medicaid eligibility in adopting states to all non-elderly adults with household incomes up to 138% of the Federal Poverty Level (FPL) (133% plus a 5% standard income disregard).", "C": "Incorrect. '200% FPL' is not the correct response; the correct answer is B (138% FPL).", "D": "Incorrect. '400% FPL' is not the correct response; the correct answer is B (138% FPL)."}}, {"id": 18, "q_num": "18", "category": "Behavioral Economics", "subtopic": "Health economics ii", "question": "A \"dual eligible\" is someone who qualifies for:", "options": [{"id": "A", "text": "Medicare and Medicaid"}, {"id": "B", "text": "Medicare A and B only"}, {"id": "C", "text": "Medicaid and CHIP"}, {"id": "D", "text": "Private and public plans"}], "correct_answer": "A", "key_concept": "Dual Eligible Beneficiaries", "explanation": "Eligible for both programs. Dual-eligible individuals qualify for both Medicare (primary payer for acute, ambulatory, and inpatient care) and Medicaid (secondary payer covering Medicare cost-sharing, premiums, and long-term custodial nursing home care).", "distractors": {"A": "Correct. Eligible for both programs. Dual-eligible individuals qualify for both Medicare (primary payer for acute, ambulatory, and inpatient care) and Medicaid (secondary payer covering Medicare cost-sharing, premiums, and long-term custodial nursing home care).", "B": "Incorrect. 'Medicare A and B only' is not the correct response; the correct answer is A (Eligible for both programs).", "C": "Incorrect. 'Medicaid and CHIP' is not the correct response; the correct answer is A (Eligible for both programs).", "D": "Incorrect. 'Private and public plans' is not the correct response; the correct answer is A (Eligible for both programs)."}}, {"id": 19, "q_num": "19", "category": "Behavioral Economics", "subtopic": "Reimbursement", "question": "Coding patients into higher-paying diagnosis groups under prospective payment is called:", "options": [{"id": "A", "text": "Cost shifting"}, {"id": "B", "text": "Patient shifting"}, {"id": "C", "text": "DRG creep"}, {"id": "D", "text": "Gaming the deductible"}], "correct_answer": "C", "key_concept": "Prospective Payment & DRG Creep", "explanation": "DRG creep. Under Medicare's Inpatient Prospective Payment System (IPPS), hospitals receive a predetermined fixed payment per discharge based on Diagnosis-Related Groups (DRGs). 'DRG creep' is the upcoding of patient diagnoses to higher-paying DRG tiers.", "distractors": {"A": "Incorrect. 'Cost shifting' is not the correct response; the correct answer is C (DRG creep).", "B": "Incorrect. 'Patient shifting' is not the correct response; the correct answer is C (DRG creep).", "C": "Correct. DRG creep. Under Medicare's Inpatient Prospective Payment System (IPPS), hospitals receive a predetermined fixed payment per discharge based on Diagnosis-Related Groups (DRGs). 'DRG creep' is the upcoding of patient diagnoses to higher-paying DRG tiers.", "D": "Incorrect. 'Gaming the deductible' is not the correct response; the correct answer is C (DRG creep)."}}, {"id": 20, "q_num": "20", "category": "Behavioral Economics", "subtopic": "Health economics ii", "question": "EMTALA requires hospitals with EDs to:", "options": [{"id": "A", "text": "Stabilize and treat emergencies regardless of ability to pay"}, {"id": "B", "text": "Treat only insured patients"}, {"id": "C", "text": "Receive dedicated federal funding for emergency care"}, {"id": "D", "text": "Charge uniform fees"}], "correct_answer": "A", "key_concept": "EMTALA Mandate", "explanation": "EMTALA (1986); no dedicated funding. The Emergency Medical Treatment and Labor Act (EMTALA, 1986) mandates that Medicare-participating hospitals with emergency departments screen and stabilize any patient experiencing an emergency medical condition regardless of ability to pay, but provides no dedicated funding.", "distractors": {"A": "Correct. EMTALA (1986); no dedicated funding. The Emergency Medical Treatment and Labor Act (EMTALA, 1986) mandates that Medicare-participating hospitals with emergency departments screen and stabilize any patient experiencing an emergency medical condition regardless of ability to pay, but provides no dedicated funding.", "B": "Incorrect. 'Treat only insured patients' is not the correct response; the correct answer is A (EMTALA (1986); no dedicated funding).", "C": "Incorrect. 'Receive dedicated federal funding for emergency care' is not the correct response; the correct answer is A (EMTALA (1986); no dedicated funding).", "D": "Incorrect. 'Charge uniform fees' is not the correct response; the correct answer is A (EMTALA (1986); no dedicated funding)."}}, {"id": 21, "q_num": "21", "category": "Survival Analysis", "subtopic": "Define survival analysis", "question": "Survival analysis analyzes:", "options": [{"id": "A", "text": "Prevalence at one time point"}, {"id": "B", "text": "Time until an event occurs"}, {"id": "C", "text": "Correlation of two variables"}, {"id": "D", "text": "Differences in means only"}], "correct_answer": "B", "key_concept": "Scope of Survival Analysis", "explanation": "Time-to-event data. Survival analysis is the statistical methodology designed specifically for longitudinal time-to-event outcomes, properly accounting for differing follow-up times and censored observations.", "distractors": {"A": "Incorrect. 'Prevalence at one time point' is not the correct response; the correct answer is B (Time-to-event data).", "B": "Correct. Time-to-event data. Survival analysis is the statistical methodology designed specifically for longitudinal time-to-event outcomes, properly accounting for differing follow-up times and censored observations.", "C": "Incorrect. 'Correlation of two variables' is not the correct response; the correct answer is B (Time-to-event data).", "D": "Incorrect. 'Differences in means only' is not the correct response; the correct answer is B (Time-to-event data)."}}, {"id": 22, "q_num": "22", "category": "Survival Analysis", "subtopic": "Censoring", "question": "A patient has no event at her last visit (month 22) and the data lock is at month 30. She is:", "options": [{"id": "A", "text": "Left-censored"}, {"id": "B", "text": "Uncensored"}, {"id": "C", "text": "Right-censored"}, {"id": "D", "text": "An event"}], "correct_answer": "C", "key_concept": "Right Censoring Mechanism", "explanation": "Right-censored (event not observed by data lock). Right censoring occurs when a subject is followed for a period of time, but the study observation ends before the event occurs (e.g., patient is alive and event-free at study data lock).", "distractors": {"A": "Incorrect. 'Left-censored' is not the correct response; the correct answer is C (Right-censored (event not observed by data lock)).", "B": "Incorrect. 'Uncensored' is not the correct response; the correct answer is C (Right-censored (event not observed by data lock)).", "C": "Correct. Right-censored (event not observed by data lock). Right censoring occurs when a subject is followed for a period of time, but the study observation ends before the event occurs (e.g., patient is alive and event-free at study data lock).", "D": "Incorrect. 'An event' is not the correct response; the correct answer is C (Right-censored (event not observed by data lock))."}}, {"id": 23, "q_num": "23", "category": "Survival Analysis", "subtopic": "Survival analysis part 1", "question": "Which is NOT a reason for censoring?", "options": [{"id": "A", "text": "Study ends"}, {"id": "B", "text": "Loss to follow-up"}, {"id": "C", "text": "Withdrawal from study"}, {"id": "D", "text": "Experiencing the event"}], "correct_answer": "D", "key_concept": "Distinguishing Events from Censoring", "explanation": "The event itself is not censoring. Censoring means the event time is unobserved (lost to follow-up, withdrew consent, study ended). Experiencing the event of interest is an uncensored failure event, NOT censoring.", "distractors": {"A": "Incorrect. 'Study ends' is not the correct response; the correct answer is D (The event itself is not censoring).", "B": "Incorrect. 'Loss to follow-up' is not the correct response; the correct answer is D (The event itself is not censoring).", "C": "Incorrect. 'Withdrawal from study' is not the correct response; the correct answer is D (The event itself is not censoring).", "D": "Correct. The event itself is not censoring. Censoring means the event time is unobserved (lost to follow-up, withdrew consent, study ended). Experiencing the event of interest is an uncensored failure event, NOT censoring."}}, {"id": 24, "q_num": "24", "category": "Survival Analysis", "subtopic": "Survival analysis part 1", "question": "Which is INFORMATIVE censoring?", "options": [{"id": "A", "text": "Patient moves for a new job"}, {"id": "B", "text": "Study ends"}, {"id": "C", "text": "Patient stops attending because the cancer recurred"}, {"id": "D", "text": "Administrative cutoff"}], "correct_answer": "C", "key_concept": "Informative vs Non-informative Censoring", "explanation": "Censoring related to event risk. Informative censoring occurs when the reason for a subject leaving observation is correlated with their risk of experiencing the event (e.g., dropping out because of terminal illness progression), violating model independence assumptions.", "distractors": {"A": "Incorrect. 'Patient moves for a new job' is not the correct response; the correct answer is C (Censoring related to event risk).", "B": "Incorrect. 'Study ends' is not the correct response; the correct answer is C (Censoring related to event risk).", "C": "Correct. Censoring related to event risk. Informative censoring occurs when the reason for a subject leaving observation is correlated with their risk of experiencing the event (e.g., dropping out because of terminal illness progression), violating model independence assumptions.", "D": "Incorrect. 'Administrative cutoff' is not the correct response; the correct answer is C (Censoring related to event risk)."}}, {"id": 25, "q_num": "25", "category": "Survival Analysis", "subtopic": "Survival analysis part 1", "question": "The main risk of informative censoring is:", "options": [{"id": "A", "text": "Biased survival estimates"}, {"id": "B", "text": "Larger sample size"}, {"id": "C", "text": "Lower hazard"}, {"id": "D", "text": "Narrower CIs"}], "correct_answer": "A", "key_concept": "Consequences of Informative Censoring", "explanation": "Violated assumption biases estimates. Informative censoring violates the fundamental assumption of independent censoring, resulting in biased survival curves and distorted hazard ratio estimates.", "distractors": {"A": "Correct. Violated assumption biases estimates. Informative censoring violates the fundamental assumption of independent censoring, resulting in biased survival curves and distorted hazard ratio estimates.", "B": "Incorrect. 'Larger sample size' is not the correct response; the correct answer is A (Violated assumption biases estimates).", "C": "Incorrect. 'Lower hazard' is not the correct response; the correct answer is A (Violated assumption biases estimates).", "D": "Incorrect. 'Narrower CIs' is not the correct response; the correct answer is A (Violated assumption biases estimates)."}}, {"id": 26, "q_num": "26", "category": "Survival Analysis", "subtopic": "Survivor function", "question": "S(t) is defined as:", "options": [{"id": "A", "text": "P(T < t)"}, {"id": "B", "text": "P(T > t)"}, {"id": "C", "text": "The instantaneous event rate"}, {"id": "D", "text": "The median time"}], "correct_answer": "B", "key_concept": "Definition of Survivor Function S(t)", "explanation": "S(t) = P(T > t). The survivor function S(t) = P(T > t) represents the cumulative probability that an individual survives past time t (remains event-free beyond time t).", "distractors": {"A": "Incorrect. 'P(T < t)' is not the correct response; the correct answer is B (S(t) = P(T > t)).", "B": "Correct. S(t) = P(T > t). The survivor function S(t) = P(T > t) represents the cumulative probability that an individual survives past time t (remains event-free beyond time t).", "C": "Incorrect. 'The instantaneous event rate' is not the correct response; the correct answer is B (S(t) = P(T > t)).", "D": "Incorrect. 'The median time' is not the correct response; the correct answer is B (S(t) = P(T > t))."}}, {"id": 27, "q_num": "27", "category": "Survival Analysis", "subtopic": "Survival analysis part 1", "question": "A Kaplan-Meier survivor function:", "options": [{"id": "A", "text": "Increases over time"}, {"id": "B", "text": "Starts at 0"}, {"id": "C", "text": "Is a decreasing step function starting at 1"}, {"id": "D", "text": "Is a smooth curve starting at 0.5"}], "correct_answer": "C", "key_concept": "Kaplan-Meier Curve Trajectory", "explanation": "Decreasing step function from 1. A Kaplan-Meier curve is a non-parametric decreasing step function that starts at S(0) = 1.0 (100% event-free) and drops at each observed event time, with tick marks indicating censored individuals.", "distractors": {"A": "Incorrect. 'Increases over time' is not the correct response; the correct answer is C (Decreasing step function from 1).", "B": "Incorrect. 'Starts at 0' is not the correct response; the correct answer is C (Decreasing step function from 1).", "C": "Correct. Decreasing step function from 1. A Kaplan-Meier curve is a non-parametric decreasing step function that starts at S(0) = 1.0 (100% event-free) and drops at each observed event time, with tick marks indicating censored individuals.", "D": "Incorrect. 'Is a smooth curve starting at 0.5' is not the correct response; the correct answer is C (Decreasing step function from 1)."}}, {"id": 28, "q_num": "28", "category": "Survival Analysis", "subtopic": "Hazard", "question": "The hazard function h(t) is best described as:", "options": [{"id": "A", "text": "A probability between 0 and 1"}, {"id": "B", "text": "The instantaneous event rate given survival to time t"}, {"id": "C", "text": "The cumulative survival"}, {"id": "D", "text": "The median survival"}], "correct_answer": "B", "key_concept": "Hazard Function h(t) Definition", "explanation": "Instantaneous rate, not a probability. The hazard function h(t) represents the instantaneous rate of event occurrence per unit of time at time t, conditional on having survived event-free up to time t; it is a rate, not a probability.", "distractors": {"A": "Incorrect. 'A probability between 0 and 1' is not the correct response; the correct answer is B (Instantaneous rate, not a probability).", "B": "Correct. Instantaneous rate, not a probability. The hazard function h(t) represents the instantaneous rate of event occurrence per unit of time at time t, conditional on having survived event-free up to time t; it is a rate, not a probability.", "C": "Incorrect. 'The cumulative survival' is not the correct response; the correct answer is B (Instantaneous rate, not a probability).", "D": "Incorrect. 'The median survival' is not the correct response; the correct answer is B (Instantaneous rate, not a probability)."}}, {"id": 29, "q_num": "29", "category": "Survival Analysis", "subtopic": "Survival analysis part 1", "question": "Complication risk is highest right after surgery and then declines. This is:", "options": [{"id": "A", "text": "Constant hazard"}, {"id": "B", "text": "Increasing hazard"}, {"id": "C", "text": "Decreasing hazard"}, {"id": "D", "text": "Unimodal hazard only"}], "correct_answer": "C", "key_concept": "Non-Constant Hazard Shapes", "explanation": "Front-loaded risk declines over time. A hazard function can be front-loaded (high initial risk that declines over time, such as post-surgical infection or perioperative mortality), constant (flat exponential), or increasing (wear-and-tear aging).", "distractors": {"A": "Incorrect. 'Constant hazard' is not the correct response; the correct answer is C (Front-loaded risk declines over time).", "B": "Incorrect. 'Increasing hazard' is not the correct response; the correct answer is C (Front-loaded risk declines over time).", "C": "Correct. Front-loaded risk declines over time. A hazard function can be front-loaded (high initial risk that declines over time, such as post-surgical infection or perioperative mortality), constant (flat exponential), or increasing (wear-and-tear aging).", "D": "Incorrect. 'Unimodal hazard only' is not the correct response; the correct answer is C (Front-loaded risk declines over time)."}}, {"id": 30, "q_num": "30", "category": "Survival Analysis", "subtopic": "Goals", "question": "Which is NOT a primary goal of survival analysis?", "options": [{"id": "A", "text": "Estimate survivor/hazard functions"}, {"id": "B", "text": "Compare survival between groups"}, {"id": "C", "text": "Assess how predictors relate to survival time"}, {"id": "D", "text": "Calculate disease prevalence"}], "correct_answer": "D", "key_concept": "Objectives of Survival Analysis", "explanation": "Prevalence is not a survival goal. Primary goals of survival analysis include estimating survival curves, comparing survival distributions across groups (log-rank test), and assessing prognostic factors (Cox models). Point-in-time disease prevalence is evaluated via cross-sectional methods, not survival analysis.", "distractors": {"A": "Incorrect. 'Estimate survivor/hazard functions' is not the correct response; the correct answer is D (Prevalence is not a survival goal).", "B": "Incorrect. 'Compare survival between groups' is not the correct response; the correct answer is D (Prevalence is not a survival goal).", "C": "Incorrect. 'Assess how predictors relate to survival time' is not the correct response; the correct answer is D (Prevalence is not a survival goal).", "D": "Correct. Prevalence is not a survival goal. Primary goals of survival analysis include estimating survival curves, comparing survival distributions across groups (log-rank test), and assessing prognostic factors (Cox models). Point-in-time disease prevalence is evaluated via cross-sectional methods, not survival analysis."}}, {"id": 31, "q_num": "31", "category": "Survival Analysis", "subtopic": "Km curves", "question": "Median survival is the time at which:", "options": [{"id": "A", "text": "S(t) = 0"}, {"id": "B", "text": "S(t) = 0.5"}, {"id": "C", "text": "h(t) = 1"}, {"id": "D", "text": "S(t) = 0.95"}], "correct_answer": "B", "key_concept": "Median Survival Time", "explanation": "50% survival. Median survival time is the time at which the Kaplan-Meier survivor function S(t) crosses 0.50 (the time point at which 50% of the study cohort has experienced the event).", "distractors": {"A": "Incorrect. 'S(t) = 0' is not the correct response; the correct answer is B (50% survival).", "B": "Correct. 50% survival. Median survival time is the time at which the Kaplan-Meier survivor function S(t) crosses 0.50 (the time point at which 50% of the study cohort has experienced the event).", "C": "Incorrect. 'h(t) = 1' is not the correct response; the correct answer is B (50% survival).", "D": "Incorrect. 'S(t) = 0.95' is not the correct response; the correct answer is B (50% survival)."}}, {"id": 32, "q_num": "32", "category": "Survival Analysis", "subtopic": "Survival analysis part 2", "question": "The log-rank test's null hypothesis is that:", "options": [{"id": "A", "text": "Median survival is zero"}, {"id": "B", "text": "All patients survive"}, {"id": "C", "text": "Hazards are the same across groups at all times"}, {"id": "D", "text": "Censoring is informative"}], "correct_answer": "C", "key_concept": "Log-Rank Test Null Hypothesis", "explanation": "Equal hazards at all times. The null hypothesis of the non-parametric log-rank test is that the hazard functions in the comparative groups are identical at all points during follow-up (H0: h1(t) = h2(t) for all t).", "distractors": {"A": "Incorrect. 'Median survival is zero' is not the correct response; the correct answer is C (Equal hazards at all times).", "B": "Incorrect. 'All patients survive' is not the correct response; the correct answer is C (Equal hazards at all times).", "C": "Correct. Equal hazards at all times. The null hypothesis of the non-parametric log-rank test is that the hazard functions in the comparative groups are identical at all points during follow-up (H0: h1(t) = h2(t) for all t).", "D": "Incorrect. 'Censoring is informative' is not the correct response; the correct answer is C (Equal hazards at all times)."}}, {"id": 33, "q_num": "33", "category": "Survival Analysis", "subtopic": "Survival analysis part 2", "question": "A log-rank test gives p < 0.001 comparing two arms. The best conclusion is:", "options": [{"id": "A", "text": "No difference in survival"}, {"id": "B", "text": "Statistically significant difference in survival"}, {"id": "C", "text": "The HR equals 1"}, {"id": "D", "text": "Censoring was non-informative"}], "correct_answer": "B", "key_concept": "Log-Rank Test Significance", "explanation": "Significant difference in survival. A log-rank test p < 0.001 provides strong evidence to reject the null hypothesis of equal hazard functions, demonstrating a statistically significant difference in survival distributions between arms.", "distractors": {"A": "Incorrect. 'No difference in survival' is not the correct response; the correct answer is B (Significant difference in survival).", "B": "Correct. Significant difference in survival. A log-rank test p < 0.001 provides strong evidence to reject the null hypothesis of equal hazard functions, demonstrating a statistically significant difference in survival distributions between arms.", "C": "Incorrect. 'The HR equals 1' is not the correct response; the correct answer is B (Significant difference in survival).", "D": "Incorrect. 'Censoring was non-informative' is not the correct response; the correct answer is B (Significant difference in survival)."}}, {"id": 34, "q_num": "34", "category": "Survival Analysis", "subtopic": "Hazard ratios", "question": "HR = hazard(treatment) / hazard(control). HR < 1 means:", "options": [{"id": "A", "text": "Event rate is higher in treatment"}, {"id": "B", "text": "Event rate is lower in treatment"}, {"id": "C", "text": "No difference"}, {"id": "D", "text": "Treatment is unsafe"}], "correct_answer": "B", "key_concept": "Interpreting Hazard Ratio Direction", "explanation": "Lower event rate in treatment. Hazard Ratio HR = hazard(treatment) / hazard(control). When HR < 1.0, the treatment group experiences a lower instantaneous rate of failure events per unit time compared to control.", "distractors": {"A": "Incorrect. 'Event rate is higher in treatment' is not the correct response; the correct answer is B (Lower event rate in treatment).", "B": "Correct. Lower event rate in treatment. Hazard Ratio HR = hazard(treatment) / hazard(control). When HR < 1.0, the treatment group experiences a lower instantaneous rate of failure events per unit time compared to control.", "C": "Incorrect. 'No difference' is not the correct response; the correct answer is B (Lower event rate in treatment).", "D": "Incorrect. 'Treatment is unsafe' is not the correct response; the correct answer is B (Lower event rate in treatment)."}}, {"id": 35, "q_num": "35", "category": "Survival Analysis", "subtopic": "Survival analysis part 2", "question": "KEYNOTE-522 EFS HR = 0.65. Correct interpretation:", "options": [{"id": "A", "text": "65% of patients were event-free"}, {"id": "B", "text": "35% lower hazard of an event with pembrolizumab"}, {"id": "C", "text": "65% lower hazard of an event"}, {"id": "D", "text": "35% of patients had events"}], "correct_answer": "B", "key_concept": "KEYNOTE-522 EFS Hazard Ratio", "explanation": "(1 − 0.65) = 35% lower hazard. An event-free survival (EFS) HR of 0.65 indicates that patients receiving pembrolizumab had a 35% lower instantaneous hazard of disease recurrence, progression, or death at any time point during follow-up (1 − 0.65 = 0.35).", "distractors": {"A": "Incorrect. '65% of patients were event-free' is not the correct response; the correct answer is B ((1 − 0.65) = 35% lower hazard).", "B": "Correct. (1 − 0.65) = 35% lower hazard. An event-free survival (EFS) HR of 0.65 indicates that patients receiving pembrolizumab had a 35% lower instantaneous hazard of disease recurrence, progression, or death at any time point during follow-up (1 − 0.65 = 0.35).", "C": "Incorrect. '65% lower hazard of an event' is not the correct response; the correct answer is B ((1 − 0.65) = 35% lower hazard).", "D": "Incorrect. '35% of patients had events' is not the correct response; the correct answer is B ((1 − 0.65) = 35% lower hazard)."}}, {"id": 36, "q_num": "36", "category": "Survival Analysis", "subtopic": "Survival analysis part 2", "question": "OS HR before 2 years was 0.87 (95% CI 0.57–1.32). This estimate is:", "options": [{"id": "A", "text": "Significant, because it is below 1"}, {"id": "B", "text": "Significant, because it is above 0"}, {"id": "C", "text": "Not significant, because the CI includes 1"}, {"id": "D", "text": "Not significant, because the CI includes 0"}], "correct_answer": "C", "key_concept": "Confidence Interval Crossing Ratio Null", "explanation": "CI includes 1 (null for ratios). For ratio metrics (HR, RR, OR), the null value is 1.0. A hazard ratio of 0.87 with 95% CI (0.57 to 1.32) is not statistically significant at alpha = 0.05 because the confidence interval includes 1.0.", "distractors": {"A": "Incorrect. 'Significant, because it is below 1' is not the correct response; the correct answer is C (CI includes 1 (null for ratios)).", "B": "Incorrect. 'Significant, because it is above 0' is not the correct response; the correct answer is C (CI includes 1 (null for ratios)).", "C": "Correct. CI includes 1 (null for ratios). For ratio metrics (HR, RR, OR), the null value is 1.0. A hazard ratio of 0.87 with 95% CI (0.57 to 1.32) is not statistically significant at alpha = 0.05 because the confidence interval includes 1.0.", "D": "Incorrect. 'Not significant, because the CI includes 0' is not the correct response; the correct answer is C (CI includes 1 (null for ratios))."}}, {"id": 37, "q_num": "37", "category": "Survival Analysis", "subtopic": "Survival analysis part 2", "question": "KEYNOTE-522 5-year OS was 86.6% vs 81.7%. The absolute gain is about:", "options": [{"id": "A", "text": "1 percentage point"}, {"id": "B", "text": "5 percentage points"}, {"id": "C", "text": "35 percentage points"}, {"id": "D", "text": "66 percentage points"}], "correct_answer": "B", "key_concept": "Absolute vs Relative Survival Gains", "explanation": "86.6 − 81.7 ≈ 4.9 points. Absolute survival gain is calculated as the simple difference in survival percentages at a specific time point: 86.6% − 81.7% = 4.9 percentage points of absolute survival benefit.", "distractors": {"A": "Incorrect. '1 percentage point' is not the correct response; the correct answer is B (86.6 − 81.7 ≈ 4.9 points).", "B": "Correct. 86.6 − 81.7 ≈ 4.9 points. Absolute survival gain is calculated as the simple difference in survival percentages at a specific time point: 86.6% − 81.7% = 4.9 percentage points of absolute survival benefit.", "C": "Incorrect. '35 percentage points' is not the correct response; the correct answer is B (86.6 − 81.7 ≈ 4.9 points).", "D": "Incorrect. '66 percentage points' is not the correct response; the correct answer is B (86.6 − 81.7 ≈ 4.9 points)."}}, {"id": 38, "q_num": "38", "category": "Survival Analysis", "subtopic": "Cox model", "question": "A key Cox model assumption is:", "options": [{"id": "A", "text": "Normal outcomes"}, {"id": "B", "text": "No censoring"}, {"id": "C", "text": "Proportional hazards"}, {"id": "D", "text": "Equal group sizes"}], "correct_answer": "C", "key_concept": "Proportional Hazards Assumption", "explanation": "Proportional hazards (curves should not cross). The proportional hazards assumption of the Cox model requires that the hazard ratio between groups remains constant over time; violation is visually suspected when Kaplan-Meier survival curves cross each other.", "distractors": {"A": "Incorrect. 'Normal outcomes' is not the correct response; the correct answer is C (Proportional hazards (curves should not cross)).", "B": "Incorrect. 'No censoring' is not the correct response; the correct answer is C (Proportional hazards (curves should not cross)).", "C": "Correct. Proportional hazards (curves should not cross). The proportional hazards assumption of the Cox model requires that the hazard ratio between groups remains constant over time; violation is visually suspected when Kaplan-Meier survival curves cross each other.", "D": "Incorrect. 'Equal group sizes' is not the correct response; the correct answer is C (Proportional hazards (curves should not cross))."}}, {"id": 39, "q_num": "39", "category": "Survival Analysis", "subtopic": "Survival analysis part 2", "question": "A Cox model coefficient is usually reported as a:", "options": [{"id": "A", "text": "Mean difference"}, {"id": "B", "text": "Odds ratio"}, {"id": "C", "text": "Correlation coefficient"}, {"id": "D", "text": "Hazard ratio"}], "correct_answer": "D", "key_concept": "Cox Model Output", "explanation": "Cox reports HRs. Coefficients (beta) in a Cox proportional hazards model represent log hazard ratios; exponentiating the coefficient (exp(beta)) produces the hazard ratio (HR).", "distractors": {"A": "Incorrect. 'Mean difference' is not the correct response; the correct answer is D (Cox reports HRs).", "B": "Incorrect. 'Odds ratio' is not the correct response; the correct answer is D (Cox reports HRs).", "C": "Incorrect. 'Correlation coefficient' is not the correct response; the correct answer is D (Cox reports HRs).", "D": "Correct. Cox reports HRs. Coefficients (beta) in a Cox proportional hazards model represent log hazard ratios; exponentiating the coefficient (exp(beta)) produces the hazard ratio (HR)."}}, {"id": 40, "q_num": "40", "category": "Survival Analysis", "subtopic": "Apply", "question": "Cox model: age ≥ 65 vs < 65, HR 1.4 (95% CI 1.1–1.8). Best interpretation:", "options": [{"id": "A", "text": "Older patients have 40% higher hazard; significant"}, {"id": "B", "text": "Older patients have 40% higher hazard; not significant"}, {"id": "C", "text": "40% of older patients die"}, {"id": "D", "text": "Older patients have 40% lower hazard"}], "correct_answer": "A", "key_concept": "Cox Model Age Covariate", "explanation": "HR 1.4 → 40% higher; CI excludes 1. An HR of 1.40 (95% CI 1.10 to 1.80) for age ≥65 indicates that older patients have a statistically significant 40% higher hazard of the event compared to younger patients, adjusting for other model covariates.", "distractors": {"A": "Correct. HR 1.4 → 40% higher; CI excludes 1. An HR of 1.40 (95% CI 1.10 to 1.80) for age ≥65 indicates that older patients have a statistically significant 40% higher hazard of the event compared to younger patients, adjusting for other model covariates.", "B": "Incorrect. 'Older patients have 40% higher hazard; not significant' is not the correct response; the correct answer is A (HR 1.4 → 40% higher; CI excludes 1).", "C": "Incorrect. '40% of older patients die' is not the correct response; the correct answer is A (HR 1.4 → 40% higher; CI excludes 1).", "D": "Incorrect. 'Older patients have 40% lower hazard' is not the correct response; the correct answer is A (HR 1.4 → 40% higher; CI excludes 1)."}}, {"id": 41, "q_num": "41", "category": "Biostatistics", "subtopic": "H₀/hₐ", "question": "For veltrazide vs chlorthalidone (change in SBP), H₀ is:", "options": [{"id": "A", "text": "Veltrazide lowers SBP more"}, {"id": "B", "text": "Veltrazide lowers SBP less"}, {"id": "C", "text": "No difference in mean SBP change between drugs"}, {"id": "D", "text": "SBP is normally distributed"}], "correct_answer": "C", "key_concept": "Null Hypothesis in Clinical Trials", "explanation": "H₀ = no difference. In a superiority trial, the null hypothesis H0 states that there is no true difference in the primary outcome parameter between the experimental intervention and the active comparator.", "distractors": {"A": "Incorrect. 'Veltrazide lowers SBP more' is not the correct response; the correct answer is C (H₀ = no difference).", "B": "Incorrect. 'Veltrazide lowers SBP less' is not the correct response; the correct answer is C (H₀ = no difference).", "C": "Correct. H₀ = no difference. In a superiority trial, the null hypothesis H0 states that there is no true difference in the primary outcome parameter between the experimental intervention and the active comparator.", "D": "Incorrect. 'SBP is normally distributed' is not the correct response; the correct answer is C (H₀ = no difference)."}}, {"id": 42, "q_num": "42", "category": "Biostatistics", "subtopic": "Error consequences", "question": "A Type II error in a drug trial means:", "options": [{"id": "A", "text": "An ineffective drug is adopted"}, {"id": "B", "text": "An effective drug is abandoned"}, {"id": "C", "text": "The p-value is exactly 0.05"}, {"id": "D", "text": "The sample was biased"}], "correct_answer": "B", "key_concept": "Type II Error (False Negative)", "explanation": "False negative; effective drug abandoned. A Type II error (beta) occurs when investigators fail to reject a false null hypothesis, mistakenly concluding a drug has no effect and abandoning an effective medication.", "distractors": {"A": "Incorrect. 'An ineffective drug is adopted' is not the correct response; the correct answer is B (False negative; effective drug abandoned).", "B": "Correct. False negative; effective drug abandoned. A Type II error (beta) occurs when investigators fail to reject a false null hypothesis, mistakenly concluding a drug has no effect and abandoning an effective medication.", "C": "Incorrect. 'The p-value is exactly 0.05' is not the correct response; the correct answer is B (False negative; effective drug abandoned).", "D": "Incorrect. 'The sample was biased' is not the correct response; the correct answer is B (False negative; effective drug abandoned)."}}, {"id": 43, "q_num": "43", "category": "Biostatistics", "subtopic": "Biostatistics 1", "question": "A Type I error in a drug trial means:", "options": [{"id": "A", "text": "An effective drug is abandoned"}, {"id": "B", "text": "Power equals 1 − β"}, {"id": "C", "text": "A false negative"}, {"id": "D", "text": "An ineffective drug is adopted"}], "correct_answer": "D", "key_concept": "Type I Error (False Positive)", "explanation": "False positive; ineffective drug adopted. A Type I error (alpha) occurs when investigators reject a true null hypothesis, concluding an ineffective drug is superior and adopting a therapy that provides no genuine benefit.", "distractors": {"A": "Incorrect. 'An effective drug is abandoned' is not the correct response; the correct answer is D (False positive; ineffective drug adopted).", "B": "Incorrect. 'Power equals 1 − β' is not the correct response; the correct answer is D (False positive; ineffective drug adopted).", "C": "Incorrect. 'A false negative' is not the correct response; the correct answer is D (False positive; ineffective drug adopted).", "D": "Correct. False positive; ineffective drug adopted. A Type I error (alpha) occurs when investigators reject a true null hypothesis, concluding an ineffective drug is superior and adopting a therapy that provides no genuine benefit."}}, {"id": 44, "q_num": "44", "category": "Biostatistics", "subtopic": "Power", "question": "Which change DECREASES power?", "options": [{"id": "A", "text": "Larger sample size"}, {"id": "B", "text": "Larger true effect"}, {"id": "C", "text": "Larger SD of the outcome"}, {"id": "D", "text": "Higher alpha"}], "correct_answer": "C", "key_concept": "Power Levers (Variability)", "explanation": "More variability lowers power. Statistical power (1 − beta) is reduced by higher outcome variability (greater noise/SD), smaller sample size, smaller target effect size, or lowering the significance threshold alpha.", "distractors": {"A": "Incorrect. 'Larger sample size' is not the correct response; the correct answer is C (More variability lowers power).", "B": "Incorrect. 'Larger true effect' is not the correct response; the correct answer is C (More variability lowers power).", "C": "Correct. More variability lowers power. Statistical power (1 − beta) is reduced by higher outcome variability (greater noise/SD), smaller sample size, smaller target effect size, or lowering the significance threshold alpha.", "D": "Incorrect. 'Higher alpha' is not the correct response; the correct answer is C (More variability lowers power)."}}, {"id": 45, "q_num": "45", "category": "Biostatistics", "subtopic": "Ci width", "question": "Doubling the sample size will generally:", "options": [{"id": "A", "text": "Widen the CI"}, {"id": "B", "text": "Narrow the CI"}, {"id": "C", "text": "Not change the CI"}, {"id": "D", "text": "Shift the CI center"}], "correct_answer": "B", "key_concept": "Sample Size and Precision", "explanation": "Larger n → smaller SE → narrower CI. Increasing sample size n reduces standard error (SE = SD / sqrt(n)), which narrows confidence intervals and increases statistical power.", "distractors": {"A": "Incorrect. 'Widen the CI' is not the correct response; the correct answer is B (Larger n → smaller SE → narrower CI).", "B": "Correct. Larger n → smaller SE → narrower CI. Increasing sample size n reduces standard error (SE = SD / sqrt(n)), which narrows confidence intervals and increases statistical power.", "C": "Incorrect. 'Not change the CI' is not the correct response; the correct answer is B (Larger n → smaller SE → narrower CI).", "D": "Incorrect. 'Shift the CI center' is not the correct response; the correct answer is B (Larger n → smaller SE → narrower CI)."}}, {"id": 46, "q_num": "46", "category": "Biostatistics", "subtopic": "Test selection", "question": "Comparing mean LDL across three diet groups. Best test:", "options": [{"id": "A", "text": "Chi-square"}, {"id": "B", "text": "Paired t-test"}, {"id": "C", "text": "Two-sample t-test"}, {"id": "D", "text": "One-way ANOVA"}], "correct_answer": "D", "key_concept": "Selecting Tests for Multiple Means", "explanation": "ANOVA for >2 group means. Comparing continuous mean values across three or more independent groups (e.g., three different diets) requires One-Way Analysis of Variance (ANOVA). Pairwise t-tests would cause alpha inflation.", "distractors": {"A": "Incorrect. 'Chi-square' is not the correct response; the correct answer is D (ANOVA for >2 group means).", "B": "Incorrect. 'Paired t-test' is not the correct response; the correct answer is D (ANOVA for >2 group means).", "C": "Incorrect. 'Two-sample t-test' is not the correct response; the correct answer is D (ANOVA for >2 group means).", "D": "Correct. ANOVA for >2 group means. Comparing continuous mean values across three or more independent groups (e.g., three different diets) requires One-Way Analysis of Variance (ANOVA). Pairwise t-tests would cause alpha inflation."}}, {"id": 47, "q_num": "47", "category": "Biostatistics", "subtopic": "Biostatistics 1", "question": "Comparing BP before vs after treatment in the same patients. Best test:", "options": [{"id": "A", "text": "Paired t-test"}, {"id": "B", "text": "Two-sample t-test"}, {"id": "C", "text": "Chi-square"}, {"id": "D", "text": "ANOVA"}], "correct_answer": "A", "key_concept": "Paired vs Independent Testing", "explanation": "Paired data. Comparing continuous measurements before and after an intervention in the exact same individuals requires a paired t-test (or Wilcoxon signed-rank test), taking advantage of paired covariance.", "distractors": {"A": "Correct. Paired data. Comparing continuous measurements before and after an intervention in the exact same individuals requires a paired t-test (or Wilcoxon signed-rank test), taking advantage of paired covariance.", "B": "Incorrect. 'Two-sample t-test' is not the correct response; the correct answer is A (Paired data).", "C": "Incorrect. 'Chi-square' is not the correct response; the correct answer is A (Paired data).", "D": "Incorrect. 'ANOVA' is not the correct response; the correct answer is A (Paired data)."}}, {"id": 48, "q_num": "48", "category": "Biostatistics", "subtopic": "P-values/cis", "question": "Which result is statistically significant at α = 0.05?", "options": [{"id": "A", "text": "OR 0.8 (0.6–1.3)"}, {"id": "B", "text": "Mean difference 1.0 (−1.2 to 3.0)"}, {"id": "C", "text": "HR 0.8 (0.7–1.05)"}, {"id": "D", "text": "RR 1.4 (1.1–1.9)"}], "correct_answer": "D", "key_concept": "Judging Statistical Significance from CIs", "explanation": "Ratio CI 1.1–1.9 excludes 1; others include null. For difference measures, significance requires excluding 0. For ratio measures (RR, OR, HR), significance requires excluding 1.0. An interval of 1.1 to 1.9 excludes 1.0, establishing statistical significance.", "distractors": {"A": "Incorrect. 'OR 0.8 (0.6–1.3)' is not the correct response; the correct answer is D (Ratio CI 1.1–1.9 excludes 1; others include null).", "B": "Incorrect. 'Mean difference 1.0 (−1.2 to 3.0)' is not the correct response; the correct answer is D (Ratio CI 1.1–1.9 excludes 1; others include null).", "C": "Incorrect. 'HR 0.8 (0.7–1.05)' is not the correct response; the correct answer is D (Ratio CI 1.1–1.9 excludes 1; others include null).", "D": "Correct. Ratio CI 1.1–1.9 excludes 1; others include null. For difference measures, significance requires excluding 0. For ratio measures (RR, OR, HR), significance requires excluding 1.0. An interval of 1.1 to 1.9 excludes 1.0, establishing statistical significance."}}, {"id": 49, "q_num": "49", "category": "Biostatistics", "subtopic": "Statistical vs clinical", "question": "SBP falls 1.5 mmHg (95% CI 1.1–1.9; p < 0.001). MCID = 5 mmHg. This is:", "options": [{"id": "A", "text": "Significant and clinically meaningful"}, {"id": "B", "text": "Significant but not clinically meaningful"}, {"id": "C", "text": "Inconclusive"}, {"id": "D", "text": "Convincingly negative"}], "correct_answer": "B", "key_concept": "Statistical vs Clinical Significance", "explanation": "Significant, but effect far below MCID. A trial with huge sample size can demonstrate a tiny, statistically significant change (e.g., SBP drop of 1.5 mmHg, p < 0.001) that is far below the minimal clinically important difference (MCID = 5 mmHg), making it clinically trivial.", "distractors": {"A": "Incorrect. 'Significant and clinically meaningful' is not the correct response; the correct answer is B (Significant, but effect far below MCID).", "B": "Correct. Significant, but effect far below MCID. A trial with huge sample size can demonstrate a tiny, statistically significant change (e.g., SBP drop of 1.5 mmHg, p < 0.001) that is far below the minimal clinically important difference (MCID = 5 mmHg), making it clinically trivial.", "C": "Incorrect. 'Inconclusive' is not the correct response; the correct answer is B (Significant, but effect far below MCID).", "D": "Incorrect. 'Convincingly negative' is not the correct response; the correct answer is B (Significant, but effect far below MCID)."}}, {"id": 50, "q_num": "50", "category": "Biostatistics", "subtopic": "Biostatistics 1", "question": "Event risk falls from 10% to 8%. NNT is:", "options": [{"id": "A", "text": "2"}, {"id": "B", "text": "20"}, {"id": "C", "text": "50"}, {"id": "D", "text": "80"}], "correct_answer": "C", "key_concept": "NNT Calculation", "explanation": "ARR = 2% → NNT = 1/0.02 = 50. Absolute Risk Reduction ARR = 10% − 8% = 2% = 0.02. Number Needed to Treat NNT = 1 / ARR = 1 / 0.02 = 50 patients treated to prevent one adverse event.", "distractors": {"A": "Incorrect. '2' is not the correct response; the correct answer is C (ARR = 2% → NNT = 1/0.02 = 50).", "B": "Incorrect. '20' is not the correct response; the correct answer is C (ARR = 2% → NNT = 1/0.02 = 50).", "C": "Correct. ARR = 2% → NNT = 1/0.02 = 50. Absolute Risk Reduction ARR = 10% − 8% = 2% = 0.02. Number Needed to Treat NNT = 1 / ARR = 1 / 0.02 = 50 patients treated to prevent one adverse event.", "D": "Incorrect. '80' is not the correct response; the correct answer is C (ARR = 2% → NNT = 1/0.02 = 50)."}}, {"id": 51, "q_num": "51", "category": "Biostatistics", "subtopic": "Shape/summary", "question": "Triglycerides are right-skewed. Best summary:", "options": [{"id": "A", "text": "Mean and SD"}, {"id": "B", "text": "Median and IQR"}, {"id": "C", "text": "Mode only"}, {"id": "D", "text": "Mean and SE"}], "correct_answer": "B", "key_concept": "Summarizing Skewed Distributions", "explanation": "Skewed data: median and IQR. When physiological data are right-skewed (triglycerides, CRP, hospital length of stay), extreme high values pull the mean upward; the median and interquartile range (IQR) provide the most accurate, robust summary.", "distractors": {"A": "Incorrect. 'Mean and SD' is not the correct response; the correct answer is B (Skewed data: median and IQR).", "B": "Correct. Skewed data: median and IQR. When physiological data are right-skewed (triglycerides, CRP, hospital length of stay), extreme high values pull the mean upward; the median and interquartile range (IQR) provide the most accurate, robust summary.", "C": "Incorrect. 'Mode only' is not the correct response; the correct answer is B (Skewed data: median and IQR).", "D": "Incorrect. 'Mean and SE' is not the correct response; the correct answer is B (Skewed data: median and IQR)."}}, {"id": 52, "q_num": "52", "category": "Biostatistics", "subtopic": "Z-scores", "question": "Potassium: mean 4.2, SD 0.4. A patient's value is 5.4. The z-score is:", "options": [{"id": "A", "text": "1.2"}, {"id": "B", "text": "2"}, {"id": "C", "text": "3"}, {"id": "D", "text": "4.5"}], "correct_answer": "C", "key_concept": "Z-Score Standardization", "explanation": "(5.4 − 4.2)/0.4 = 3. Z-score = (observed value − mean) / SD = (5.4 − 4.2) / 0.4 = 1.2 / 0.4 = +3.0. The value lies 3 standard deviations above the mean.", "distractors": {"A": "Incorrect. '1.2' is not the correct response; the correct answer is C ((5.4 − 4.2)/0.4 = 3).", "B": "Incorrect. '2' is not the correct response; the correct answer is C ((5.4 − 4.2)/0.4 = 3).", "C": "Correct. (5.4 − 4.2)/0.4 = 3. Z-score = (observed value − mean) / SD = (5.4 − 4.2) / 0.4 = 1.2 / 0.4 = +3.0. The value lies 3 standard deviations above the mean.", "D": "Incorrect. '4.5' is not the correct response; the correct answer is C ((5.4 − 4.2)/0.4 = 3)."}}, {"id": 53, "q_num": "53", "category": "Biostatistics", "subtopic": "Biostatistics 2", "question": "A healthy person gets 20 independent lab tests (each 95% reference range). Chance of at least one flag:", "options": [{"id": "A", "text": "5%"}, {"id": "B", "text": "36%"}, {"id": "C", "text": "64%"}, {"id": "D", "text": "95%"}], "correct_answer": "C", "key_concept": "Multiple Testing in 20-Test Panels", "explanation": "1 − 0.95²⁰ ≈ 0.64. For 20 independent diagnostic tests each with 95% specificity (alpha = 0.05), the probability that all 20 are normal is (0.95)^20 ≈ 0.36. The chance of at least one abnormal flag is 1 − 0.36 = 0.64 (64%).", "distractors": {"A": "Incorrect. '5%' is not the correct response; the correct answer is C (1 − 0.95²⁰ ≈ 0.64).", "B": "Incorrect. '36%' is not the correct response; the correct answer is C (1 − 0.95²⁰ ≈ 0.64).", "C": "Correct. 1 − 0.95²⁰ ≈ 0.64. For 20 independent diagnostic tests each with 95% specificity (alpha = 0.05), the probability that all 20 are normal is (0.95)^20 ≈ 0.36. The chance of at least one abnormal flag is 1 − 0.36 = 0.64 (64%).", "D": "Incorrect. '95%' is not the correct response; the correct answer is C (1 − 0.95²⁰ ≈ 0.64)."}}, {"id": 54, "q_num": "54", "category": "Biostatistics", "subtopic": "Sd vs se", "question": "Which shrinks as sample size grows?", "options": [{"id": "A", "text": "Standard error"}, {"id": "B", "text": "Standard deviation"}, {"id": "C", "text": "Both"}, {"id": "D", "text": "Neither"}], "correct_answer": "A", "key_concept": "Standard Error vs Standard Deviation", "explanation": "SE = SD/√n shrinks; SD does not. Standard deviation (SD) measures the dispersion of individual values in the population and does not shrink with larger sample size. Standard error (SE = SD / sqrt(n)) measures precision of the sample mean and shrinks toward 0 as n increases.", "distractors": {"A": "Correct. SE = SD/√n shrinks; SD does not. Standard deviation (SD) measures the dispersion of individual values in the population and does not shrink with larger sample size. Standard error (SE = SD / sqrt(n)) measures precision of the sample mean and shrinks toward 0 as n increases.", "B": "Incorrect. 'Standard deviation' is not the correct response; the correct answer is A (SE = SD/√n shrinks; SD does not).", "C": "Incorrect. 'Both' is not the correct response; the correct answer is A (SE = SD/√n shrinks; SD does not).", "D": "Incorrect. 'Neither' is not the correct response; the correct answer is A (SE = SD/√n shrinks; SD does not)."}}, {"id": 55, "q_num": "55", "category": "Biostatistics", "subtopic": "Correlation", "question": "r = −0.50. Which is correct?", "options": [{"id": "A", "text": "50% of variation is explained"}, {"id": "B", "text": "Moderate negative relationship; r² = 0.25"}, {"id": "C", "text": "Weak positive relationship"}, {"id": "D", "text": "Proves causation"}], "correct_answer": "B", "key_concept": "Correlation vs Variance Explained", "explanation": "Moderate negative; r² = 0.25. Pearson r = −0.50 indicates a moderate inverse linear relationship. The coefficient of determination R^2 = (−0.50)^2 = 0.25, meaning 25% of the total variation is explained by the linear relationship.", "distractors": {"A": "Incorrect. '50% of variation is explained' is not the correct response; the correct answer is B (Moderate negative; r² = 0.25).", "B": "Correct. Moderate negative; r² = 0.25. Pearson r = −0.50 indicates a moderate inverse linear relationship. The coefficient of determination R^2 = (−0.50)^2 = 0.25, meaning 25% of the total variation is explained by the linear relationship.", "C": "Incorrect. 'Weak positive relationship' is not the correct response; the correct answer is B (Moderate negative; r² = 0.25).", "D": "Incorrect. 'Proves causation' is not the correct response; the correct answer is B (Moderate negative; r² = 0.25)."}}, {"id": 56, "q_num": "56", "category": "Biostatistics", "subtopic": "R misleads", "question": "BMI and mortality are J-shaped yet r ≈ 0. Why?", "options": [{"id": "A", "text": "No relationship exists"}, {"id": "B", "text": "Sample is too large"}, {"id": "C", "text": "Pearson r measures only straight-line association"}, {"id": "D", "text": "Spearman is always zero"}], "correct_answer": "C", "key_concept": "Linearity Limitation of Pearson r", "explanation": "r captures linear relationships only. Pearson r measures strictly linear relationships; when a biological association is non-linear (e.g., U- or J-shaped relationship between BMI and mortality), positive and negative trends cancel out, producing r ≈ 0.", "distractors": {"A": "Incorrect. 'No relationship exists' is not the correct response; the correct answer is C (r captures linear relationships only).", "B": "Incorrect. 'Sample is too large' is not the correct response; the correct answer is C (r captures linear relationships only).", "C": "Correct. r captures linear relationships only. Pearson r measures strictly linear relationships; when a biological association is non-linear (e.g., U- or J-shaped relationship between BMI and mortality), positive and negative trends cancel out, producing r ≈ 0.", "D": "Incorrect. 'Spearman is always zero' is not the correct response; the correct answer is C (r captures linear relationships only)."}}, {"id": 57, "q_num": "57", "category": "Biostatistics", "subtopic": "Regression", "question": "Adjusted β for sodium = 2.1 mmHg per 1 g/day. Interpretation:", "options": [{"id": "A", "text": "Sodium causes a 2.1% rise in SBP"}, {"id": "B", "text": "2.1 mmHg higher SBP per extra 1 g/day, holding other variables constant"}, {"id": "C", "text": "Sodium explains 2.1% of variation"}, {"id": "D", "text": "SBP rises 2.1 mmHg per mg"}], "correct_answer": "B", "key_concept": "Interpreting Adjusted Regression Slopes", "explanation": "Adjusted slope, holding others constant. In multivariable linear regression, an adjusted slope beta represents the predicted change in the outcome variable per one-unit increase in the predictor, holding all other covariates in the model constant.", "distractors": {"A": "Incorrect. 'Sodium causes a 2.1% rise in SBP' is not the correct response; the correct answer is B (Adjusted slope, holding others constant).", "B": "Correct. Adjusted slope, holding others constant. In multivariable linear regression, an adjusted slope beta represents the predicted change in the outcome variable per one-unit increase in the predictor, holding all other covariates in the model constant.", "C": "Incorrect. 'Sodium explains 2.1% of variation' is not the correct response; the correct answer is B (Adjusted slope, holding others constant).", "D": "Incorrect. 'SBP rises 2.1 mmHg per mg' is not the correct response; the correct answer is B (Adjusted slope, holding others constant)."}}, {"id": 58, "q_num": "58", "category": "Biostatistics", "subtopic": "Biostatistics 2", "question": "The unadjusted β (4.2) fell to 2.1 after adjustment for age, BMI, eGFR. Best explanation:", "options": [{"id": "A", "text": "Type I error"}, {"id": "B", "text": "Sodium is unrelated to SBP"}, {"id": "C", "text": "Smaller sample in Model 2"}, {"id": "D", "text": "Confounding by the added variables"}], "correct_answer": "D", "key_concept": "Slope Attenuation from Confounding", "explanation": "Crude and adjusted differ, so confounding. When a crude regression slope drops substantially upon adding covariates to the model (e.g., sodium beta drops from 4.2 to 2.1), the added covariates were confounding the crude relationship.", "distractors": {"A": "Incorrect. 'Type I error' is not the correct response; the correct answer is D (Crude and adjusted differ, so confounding).", "B": "Incorrect. 'Sodium is unrelated to SBP' is not the correct response; the correct answer is D (Crude and adjusted differ, so confounding).", "C": "Incorrect. 'Smaller sample in Model 2' is not the correct response; the correct answer is D (Crude and adjusted differ, so confounding).", "D": "Correct. Crude and adjusted differ, so confounding. When a crude regression slope drops substantially upon adding covariates to the model (e.g., sodium beta drops from 4.2 to 2.1), the added covariates were confounding the crude relationship."}}, {"id": 59, "q_num": "59", "category": "Biostatistics", "subtopic": "Ors and cis", "question": "aOR 1.35 (95% CI 1.12–1.63) for high sodium; aOR 0.92 (0.74–1.14) for coffee. Correct statement:", "options": [{"id": "A", "text": "Both are significant"}, {"id": "B", "text": "Coffee lowers odds by 8%, significantly"}, {"id": "C", "text": "High sodium is associated with 35% higher odds; coffee is not significant"}, {"id": "D", "text": "The sodium OR is not significant because the CI excludes 0"}], "correct_answer": "C", "key_concept": "Interpreting Multivariable Odds Ratios", "explanation": "OR CI excludes 1 for sodium; coffee's includes 1. In multivariable logistic regression, an adjusted OR with a 95% CI excluding 1.0 (e.g., 1.12 to 1.63) is statistically significant, whereas an OR with a 95% CI spanning 1.0 (e.g., 0.74 to 1.14) is not statistically significant.", "distractors": {"A": "Incorrect. 'Both are significant' is not the correct response; the correct answer is C (OR CI excludes 1 for sodium; coffee's includes 1).", "B": "Incorrect. 'Coffee lowers odds by 8%, significantly' is not the correct response; the correct answer is C (OR CI excludes 1 for sodium; coffee's includes 1).", "C": "Correct. OR CI excludes 1 for sodium; coffee's includes 1. In multivariable logistic regression, an adjusted OR with a 95% CI excluding 1.0 (e.g., 1.12 to 1.63) is statistically significant, whereas an OR with a 95% CI spanning 1.0 (e.g., 0.74 to 1.14) is not statistically significant.", "D": "Incorrect. 'The sodium OR is not significant because the CI excludes 0' is not the correct response; the correct answer is C (OR CI excludes 1 for sodium; coffee's includes 1)."}}, {"id": 60, "q_num": "60", "category": "Biostatistics", "subtopic": "Match model to outcome", "question": "Which pairing is correct?", "options": [{"id": "A", "text": "SBP → logistic regression"}, {"id": "B", "text": "30-day readmission → linear regression"}, {"id": "C", "text": "Time to death with censoring → logistic regression"}, {"id": "D", "text": "Time to death with censoring → Cox regression"}], "correct_answer": "D", "key_concept": "Matching Regression Models to Outcomes", "explanation": "Time-to-event with censoring → Cox. Continuous outcomes use linear regression; binary outcomes use logistic regression; time-to-event outcomes with censored observations use Cox proportional hazards regression.", "distractors": {"A": "Incorrect. 'SBP → logistic regression' is not the correct response; the correct answer is D (Time-to-event with censoring → Cox).", "B": "Incorrect. '30-day readmission → linear regression' is not the correct response; the correct answer is D (Time-to-event with censoring → Cox).", "C": "Incorrect. 'Time to death with censoring → logistic regression' is not the correct response; the correct answer is D (Time-to-event with censoring → Cox).", "D": "Correct. Time-to-event with censoring → Cox. Continuous outcomes use linear regression; binary outcomes use logistic regression; time-to-event outcomes with censored observations use Cox proportional hazards regression."}}];
+
+    const DOMAINS = [
+      "Behavioral Economics",
+      "Survival Analysis",
+      "Applied Biostatistics"
+    ];
+
+    // State Variables
+    let appMode = 'tutor'; // 'tutor' or 'exam'
+    let examSubmitted = false;
+    let activeCategory = 'ALL';
+    let filteredQuestions = [...ALL_QUESTIONS];
+    let currentIndex = 0;
+
+    // Interaction Storage
+    let userAnswers = {}; 
+    let flaggedQuestions = new Set();
+    let eliminatedOptions = {}; 
+    let questionHighlights = {}; 
+
+    // Tools
+    let isHighlighterActive = false;
+    let isStrikethroughActive = false;
+    let timerSeconds = 0;
+    let timerRunning = true;
+    let timerInterval = null;
+
+    const STORAGE_KEY = 'sli_60q_set5_state_v1';
+
+    // --- Init ---
+    function init() {
+      loadState();
+      buildCategoryTray();
+      buildSidebarNavigator();
+      filterCategory(activeCategory || 'ALL', false);
+      startTimer();
+      setupKeyboardNavigation();
+      setupHighlighterEvents();
+      updateModeUI();
+
+      const answeredCount = Object.keys(userAnswers).length;
+      if (answeredCount > 0) {
+        showToast(`Restored previous study session: ${answeredCount} of ${ALL_QUESTIONS.length} answered`);
+      }
+    }
+
+    function setMode(mode) {
+      appMode = mode;
+      updateModeUI();
+      renderCurrentQuestion();
+      saveState();
+      showToast(`Switched to ${mode === 'tutor' ? 'Tutor Mode (Immediate Feedback)' : 'Exam Mode (Timed Block)'}`);
+    }
+
+    function updateModeUI() {
+      const tutorBtn = document.getElementById('modeTutorBtn');
+      const examBtn = document.getElementById('modeExamBtn');
+      const submitBtn = document.getElementById('examSubmitBtn');
+
+      if (appMode === 'tutor') {
+        tutorBtn.classList.add('active');
+        examBtn.classList.remove('active');
+        submitBtn.style.display = 'none';
+      } else {
+        examBtn.classList.add('active');
+        tutorBtn.classList.remove('active');
+        submitBtn.style.display = !examSubmitted ? 'inline-flex' : 'none';
+      }
+    }
+
+    function submitExamBlock() {
+      const totalAns = Object.keys(userAnswers).length;
+      if (totalAns < ALL_QUESTIONS.length) {
+        if (!confirm(`You have answered ${totalAns} of ${ALL_QUESTIONS.length} questions. Are you sure you want to end this exam block and view your diagnostic report?`)) {
+          return;
+        }
+      }
+      examSubmitted = true;
+      document.getElementById('examSubmitBtn').style.display = 'none';
+      renderCurrentQuestion();
+      buildSidebarNavigator();
+      openScoreReport();
+      saveState();
+      showToast('Exam Block submitted! Reviewing your answers & rationales.');
+    }
+
+    // --- State Persistence ---
+    function saveState() {
+      const state = {
+        appMode,
+        examSubmitted,
+        activeCategory,
+        currentQNum: filteredQuestions[currentIndex]?.q_num || '1',
+        userAnswers,
+        flaggedQuestions: Array.from(flaggedQuestions),
+        eliminatedOptions: Object.fromEntries(
+          Object.entries(eliminatedOptions).map(([k, set]) => [k, Array.from(set)])
+        ),
+        questionHighlights,
+        timerSeconds,
+        theme: document.body.getAttribute('data-theme')
+      };
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        console.warn('Could not save to localStorage', e);
+      }
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const state = JSON.parse(raw);
+        if (state.appMode) appMode = state.appMode;
+        if (typeof state.examSubmitted === 'boolean') examSubmitted = state.examSubmitted;
+        if (state.activeCategory) activeCategory = state.activeCategory;
+        if (state.userAnswers) userAnswers = state.userAnswers;
+        if (state.flaggedQuestions) flaggedQuestions = new Set(state.flaggedQuestions);
+        if (state.eliminatedOptions) {
+          eliminatedOptions = {};
+          for (const [k, arr] of Object.entries(state.eliminatedOptions)) {
+            eliminatedOptions[k] = new Set(arr);
+          }
+        }
+        if (state.questionHighlights) questionHighlights = state.questionHighlights;
+        if (typeof state.timerSeconds === 'number') timerSeconds = state.timerSeconds;
+        if (state.theme) setTheme(state.theme);
+      } catch (e) {
+        console.warn('Error loading localStorage state', e);
+      }
+    }
+
+    function resetExamProgress() {
+      if (!confirm('Are you sure you want to reset all answers, flags, and highlights for this exam?')) return;
+      userAnswers = {};
+      flaggedQuestions.clear();
+      eliminatedOptions = {};
+      questionHighlights = {};
+      timerSeconds = 0;
+      examSubmitted = false;
+      saveState();
+      closeScoreReportDirect();
+      updateModeUI();
+      renderCurrentQuestion();
+      buildSidebarNavigator();
+      buildCategoryTray();
+      showToast('Exam progress has been completely reset.');
+    }
+
+    // --- Category Filtering ---
+    function buildCategoryTray() {
+      const tray = document.getElementById('categoryTray');
+      tray.innerHTML = '';
+
+      const allPill = document.createElement('div');
+      allPill.className = `cat-pill ${activeCategory === 'ALL' ? 'active' : ''}`;
+      allPill.onclick = () => filterCategory('ALL');
+      allPill.innerHTML = `<span>All Domains</span> <span class="cat-pill-count">${ALL_QUESTIONS.length}</span>`;
+      tray.appendChild(allPill);
+
+      DOMAINS.forEach(dom => {
+        const count = ALL_QUESTIONS.filter(q => q.category === dom).length;
+        const pill = document.createElement('div');
+        pill.className = `cat-pill ${activeCategory === dom ? 'active' : ''}`;
+        pill.onclick = () => filterCategory(dom);
+        pill.innerHTML = `<span>${dom}</span> <span class="cat-pill-count">${count}</span>`;
+        tray.appendChild(pill);
+      });
+    }
+
+    function filterCategory(catName, shouldSave = true) {
+      activeCategory = catName;
+      if (catName === 'ALL') {
+        filteredQuestions = [...ALL_QUESTIONS];
+      } else {
+        filteredQuestions = ALL_QUESTIONS.filter(q => q.category === catName);
+      }
+      currentIndex = 0;
+      buildCategoryTray();
+      renderCurrentQuestion();
+      buildSidebarNavigator();
+      if (shouldSave) saveState();
+    }
+
+    // --- RIGHT SIDEBAR: Question Navigator ---
+    function buildSidebarNavigator() {
+      const grid = document.getElementById('sidebarQuestionGrid');
+      grid.innerHTML = '';
+
+      const totalQ = ALL_QUESTIONS.length;
+      const totalAns = Object.keys(userAnswers).length;
+      const totalCorrect = Object.values(userAnswers).filter(a => a.isCorrect).length;
+      const totalPct = totalAns > 0 ? Math.round((totalCorrect / totalAns) * 100) : 0;
+
+      document.getElementById('sidebarOverallProgress').textContent = `${totalAns}/${totalQ}`;
+      document.getElementById('sideCompletedVal').textContent = `${totalAns} / ${totalQ}`;
+      document.getElementById('sideAccuracyVal').textContent = `${totalPct}%`;
+
+      const currentQNum = filteredQuestions[currentIndex]?.q_num;
+
+      ALL_QUESTIONS.forEach(q => {
+        const ans = userAnswers[q.q_num];
+        const isFlagged = flaggedQuestions.has(q.q_num);
+        const isAnswered = !!ans;
+
+        const btn = document.createElement('div');
+        btn.className = 'grid-btn';
+        if (q.q_num === currentQNum) btn.classList.add('current');
+
+        if (isAnswered) {
+          if (appMode === 'exam' && !examSubmitted) {
+            btn.classList.add('answered-exam');
+          } else {
+            btn.classList.add(ans.isCorrect ? 'correct' : 'incorrect');
+          }
+        }
+
+        if (isFlagged) btn.classList.add('flagged');
+
+        btn.textContent = q.q_num;
+        btn.onclick = () => jumpToQuestion(q.q_num);
+        grid.appendChild(btn);
+      });
+    }
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById('examSidebar');
+      sidebar.classList.toggle('collapsed');
+    }
+
+    // --- Render Current Question ---
+    function renderCurrentQuestion() {
+      if (filteredQuestions.length === 0) return;
+      const q = filteredQuestions[currentIndex];
+
+      const totalInFilter = filteredQuestions.length;
+      document.getElementById('qBadgeText').textContent = `Question ${currentIndex + 1} of ${totalInFilter} (Master Q${q.q_num})`;
+      document.getElementById('navProgressBadge').textContent = `Q ${currentIndex + 1} / ${totalInFilter}`;
+
+      const isFlagged = flaggedQuestions.has(q.q_num);
+      const flagBtn = document.getElementById('flagBtn');
+      const flagText = document.getElementById('flagBtnText');
+      if (isFlagged) {
+        flagBtn.classList.add('flagged');
+        flagText.textContent = 'Flagged';
+      } else {
+        flagBtn.classList.remove('flagged');
+        flagText.textContent = 'Flag Question';
+      }
+
+      // Stem text with user highlights
+      const stemContainer = document.getElementById('questionStemText');
+      let stemHtml = escapeHtml(q.question);
+      const highlights = questionHighlights[q.q_num] || [];
+      highlights.forEach(hText => {
+        if (hText && hText.trim()) {
+          const regex = new RegExp(`(${escapeRegex(hText)})`, 'gi');
+          stemHtml = stemHtml.replace(regex, `<mark class="user-highlight" onclick="removeHighlight('${q.q_num}', this, event)">$1</mark>`);
+        }
+      });
+      stemContainer.innerHTML = stemHtml;
+
+      // Options
+      const optionsContainer = document.getElementById('optionsList');
+      optionsContainer.innerHTML = '';
+
+      const answerInfo = userAnswers[q.q_num];
+      const isAnswered = !!answerInfo;
+      const eliminated = eliminatedOptions[q.q_num] || new Set();
+
+      const showFeedback = (appMode === 'tutor' && isAnswered) || (appMode === 'exam' && examSubmitted && isAnswered);
+
+      q.options.forEach(opt => {
+        const optDiv = document.createElement('div');
+        optDiv.className = 'option-item';
+
+        if (eliminated.has(opt.id)) optDiv.classList.add('struck');
+
+        if (isAnswered) {
+          if (answerInfo.selected === opt.id) {
+            optDiv.classList.add('selected');
+          }
+          if (showFeedback) {
+            optDiv.classList.add('disabled');
+            if (opt.id === q.correct_answer) {
+              optDiv.classList.add('state-correct');
+            } else if (opt.id === answerInfo.selected) {
+              optDiv.classList.add('state-incorrect');
+            }
+          }
+        }
+
+        optDiv.onclick = (e) => {
+          if (isStrikethroughActive) {
+            e.stopPropagation();
+            toggleEliminateOption(q.q_num, opt.id);
+          } else {
+            if (appMode === 'tutor' && isAnswered) return;
+            if (appMode === 'exam' && examSubmitted) return;
+            selectAnswer(opt.id);
+          }
+        };
+
+        optDiv.oncontextmenu = (e) => {
+          e.preventDefault();
+          toggleEliminateOption(q.q_num, opt.id);
+        };
+
+        optDiv.innerHTML = `
+          <div class="option-letter">${opt.id}</div>
+          <div class="option-text">${escapeHtml(opt.text)}</div>
+          <button class="strike-btn" onclick="event.stopPropagation(); toggleEliminateOption('${q.q_num}', '${opt.id}')" title="Eliminate / Cross out">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        `;
+        optionsContainer.appendChild(optDiv);
+      });
+
+      // Explanation Card
+      const expCard = document.getElementById('explanationCard');
+      if (showFeedback) {
+        expCard.style.display = 'flex';
+        const expStatus = document.getElementById('expStatusText');
+        if (answerInfo.isCorrect) {
+          expStatus.className = 'exp-status correct';
+          expStatus.innerHTML = `
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Correct! (Answer: ${q.correct_answer})</span>
+          `;
+        } else {
+          expStatus.className = 'exp-status incorrect';
+          expStatus.innerHTML = `
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span>Incorrect. Selected: ${answerInfo.selected}. Correct Answer: ${q.correct_answer}</span>
+          `;
+        }
+
+        // Reveal Category and Subtopic inside explanation
+        document.getElementById('expCategoryText').textContent = q.category;
+        document.getElementById('expSubtopicText').textContent = q.subtopic || 'High Yield';
+
+        document.getElementById('pearlText').textContent = q.key_concept || 'Crucial concept for scientific inquiry.';
+        document.getElementById('explanationBody').textContent = q.explanation;
+
+        // Distractor Breakdown
+        const distractorContainer = document.getElementById('distractorList');
+        distractorContainer.innerHTML = '';
+
+        q.options.forEach(opt => {
+          const isCorrect = (opt.id === q.correct_answer);
+          const reason = q.distractors && q.distractors[opt.id] ? q.distractors[opt.id] : (isCorrect ? 'Correct option as detailed above.' : 'Incorrect distractor.');
+
+          const dItem = document.createElement('div');
+          dItem.className = `distractor-item ${isCorrect ? 'is-correct' : 'is-incorrect'}`;
+          dItem.innerHTML = `
+            <span class="distractor-letter-badge">${opt.id}</span>
+            <div class="distractor-content">
+              <strong>${escapeHtml(opt.text)}:</strong> ${escapeHtml(reason)}
+            </div>
+          `;
+          distractorContainer.appendChild(dItem);
+        });
+      } else {
+        expCard.style.display = 'none';
+      }
+
+      // Button states
+      document.getElementById('prevBtn').disabled = currentIndex === 0;
+      document.getElementById('nextBtn').disabled = currentIndex === filteredQuestions.length - 1;
+
+      document.getElementById('mainExamContent').scrollTop = 0;
+      buildSidebarNavigator();
+    }
+
+    // --- Answer Selection ---
+    function selectAnswer(optId) {
+      const q = filteredQuestions[currentIndex];
+      const isCorrect = (optId === q.correct_answer);
+
+      userAnswers[q.q_num] = {
+        selected: optId,
+        isCorrect: isCorrect,
+        timestamp: Date.now()
+      };
+
+      saveState();
+      renderCurrentQuestion();
+      buildSidebarNavigator();
+    }
+
+    // --- Navigation ---
+    function prevQuestion() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderCurrentQuestion();
+        saveState();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentIndex < filteredQuestions.length - 1) {
+        currentIndex++;
+        renderCurrentQuestion();
+        saveState();
+      }
+    }
+
+    function jumpToQuestion(qNum) {
+      const idx = filteredQuestions.findIndex(q => q.q_num === qNum);
+      if (idx !== -1) {
+        currentIndex = idx;
+        renderCurrentQuestion();
+        saveState();
+      } else {
+        activeCategory = 'ALL';
+        filteredQuestions = [...ALL_QUESTIONS];
+        buildCategoryTray();
+        currentIndex = ALL_QUESTIONS.findIndex(q => q.q_num === qNum);
+        renderCurrentQuestion();
+        saveState();
+      }
+    }
+
+    // --- Flagging ---
+    function toggleFlagCurrentQuestion() {
+      const q = filteredQuestions[currentIndex];
+      if (flaggedQuestions.has(q.q_num)) {
+        flaggedQuestions.delete(q.q_num);
+      } else {
+        flaggedQuestions.add(q.q_num);
+      }
+      saveState();
+      renderCurrentQuestion();
+    }
+
+    // --- Elimination ---
+    function toggleEliminateOption(qNum, optId) {
+      if (!eliminatedOptions[qNum]) {
+        eliminatedOptions[qNum] = new Set();
+      }
+      if (eliminatedOptions[qNum].has(optId)) {
+        eliminatedOptions[qNum].delete(optId);
+      } else {
+        eliminatedOptions[qNum].add(optId);
+      }
+      saveState();
+      renderCurrentQuestion();
+    }
+
+    function toggleStrikethroughMode() {
+      isStrikethroughActive = !isStrikethroughActive;
+      const btn = document.getElementById('strikethroughToggleBtn');
+      if (isStrikethroughActive) {
+        btn.classList.add('active-tool');
+        showToast('Cross-out active: click any option to strike through');
+      } else {
+        btn.classList.remove('active-tool');
+        showToast('Cross-out tool deactivated');
+      }
+    }
+
+    // --- Highlighter Feature ---
+    function toggleHighlighterMode() {
+      isHighlighterActive = !isHighlighterActive;
+      const btn = document.getElementById('highlighterToggleBtn');
+      if (isHighlighterActive) {
+        btn.classList.add('active-tool');
+        showToast('Highlighter active: drag over text in the stem');
+      } else {
+        btn.classList.remove('active-tool');
+        showToast('Highlighter deactivated');
+      }
+    }
+
+    function setupHighlighterEvents() {
+      const stemContainer = document.getElementById('questionStemText');
+      const tooltip = document.getElementById('highlightTooltip');
+
+      stemContainer.addEventListener('mouseup', (e) => {
+        const selection = window.getSelection();
+        const selectedText = selection.toString().trim();
+
+        if (selectedText.length > 2) {
+          if (isHighlighterActive) {
+            // Auto-highlight if mode is active
+            applyHighlightText(selectedText);
+            selection.removeAllRanges();
+            tooltip.style.display = 'none';
+          } else {
+            // Show floating highlight tooltip
+            const range = selection.getRangeAt(0);
+            const rect = range.getBoundingClientRect();
+            const containerRect = stemContainer.getBoundingClientRect();
+            
+            tooltip.style.left = `${rect.left + rect.width / 2}px`;
+            tooltip.style.top = `${rect.top - 10}px`;
+            tooltip.style.position = 'fixed';
+            tooltip.style.display = 'block';
+          }
+        } else {
+          tooltip.style.display = 'none';
+        }
+      });
+
+      document.addEventListener('mousedown', (e) => {
+        if (e.target !== tooltip && !tooltip.contains(e.target)) {
+          tooltip.style.display = 'none';
+        }
+      });
+    }
+
+    function applySelectionHighlight() {
+      const selection = window.getSelection();
+      const selectedText = selection.toString().trim();
+      if (selectedText.length > 1) {
+        applyHighlightText(selectedText);
+        selection.removeAllRanges();
+      }
+      document.getElementById('highlightTooltip').style.display = 'none';
+    }
+
+    function applyHighlightText(textToHighlight) {
+      const q = filteredQuestions[currentIndex];
+      if (!questionHighlights[q.q_num]) {
+        questionHighlights[q.q_num] = [];
+      }
+      if (!questionHighlights[q.q_num].includes(textToHighlight)) {
+        questionHighlights[q.q_num].push(textToHighlight);
+        saveState();
+        renderCurrentQuestion();
+        showToast('Highlighted');
+      }
+    }
+
+    function removeHighlight(qNum, el, event) {
+      event.stopPropagation();
+      const text = el.textContent;
+      if (questionHighlights[qNum]) {
+        questionHighlights[qNum] = questionHighlights[qNum].filter(t => t !== text);
+        saveState();
+        renderCurrentQuestion();
+        showToast('Highlight removed');
+      }
+    }
+
+    // --- Score Report ---
+    function openScoreReport() {
+      document.getElementById('scoreModal').classList.add('open');
+
+      const totalQ = ALL_QUESTIONS.length;
+      const answeredList = Object.values(userAnswers);
+      const totalAns = answeredList.length;
+      const totalCorrect = answeredList.filter(a => a.isCorrect).length;
+      const totalIncorrect = totalAns - totalCorrect;
+      const pct = totalAns > 0 ? Math.round((totalCorrect / totalAns) * 100) : 0;
+
+      document.getElementById('reportAccuracyVal').textContent = `${pct}%`;
+      document.getElementById('reportCorrectCount').textContent = totalCorrect;
+      document.getElementById('reportIncorrectCount').textContent = totalIncorrect;
+      document.getElementById('reportAnsweredCount').textContent = `${totalAns} / ${totalQ}`;
+
+      const tbody = document.getElementById('reportDomainTableBody');
+      tbody.innerHTML = '';
+
+      DOMAINS.forEach(dom => {
+        const domQs = ALL_QUESTIONS.filter(q => q.category === dom);
+        const domAns = domQs.filter(q => userAnswers[q.q_num]);
+        const domCorrect = domAns.filter(q => userAnswers[q.q_num].isCorrect);
+        const domPct = domAns.length > 0 ? Math.round((domCorrect.length / domAns.length) * 100) : 0;
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td style="font-weight:600; color:var(--text-main);">${dom}</td>
+          <td>${domAns.length} / ${domQs.length}</td>
+          <td style="color:var(--success); font-family:var(--font-mono); font-weight:700;">${domCorrect.length}</td>
+          <td>
+            <span style="font-family:var(--font-mono); font-weight:700; color: ${domPct >= 70 ? 'var(--success)' : domPct >= 50 ? 'var(--warning)' : 'var(--error)'};">
+              ${domPct}%
+            </span>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function closeScoreReport(e) {
+      if (e.target.id === 'scoreModal') closeScoreReportDirect();
+    }
+
+    function closeScoreReportDirect() {
+      document.getElementById('scoreModal').classList.remove('open');
+    }
+
+    // --- Targeted Review Prompt Modal ---
+    function openGeminiModal() {
+      document.getElementById('geminiModal').classList.add('open');
+
+      const missedQuestions = ALL_QUESTIONS.filter(q => userAnswers[q.q_num] && !userAnswers[q.q_num].isCorrect);
+      const domainMissCount = {};
+      const subtopicList = [];
+
+      missedQuestions.forEach(q => {
+        domainMissCount[q.category] = (domainMissCount[q.category] || 0) + 1;
+        if (q.subtopic && !subtopicList.includes(q.subtopic)) {
+          subtopicList.push(q.subtopic);
+        }
+      });
+
+      let promptText = `I am a medical student at the University at Buffalo studying for my Scientific Literacy & Inquiry (SL&I) Semester 3 final examination.\n\n`;
+      promptText += `I just completed ${title_text}.\n`;
+
+      if (missedQuestions.length === 0) {
+        promptText += `I scored 100% on this block! Please provide 5 ultra-challenging integrative clinical vignettes combining Behavioral Economics, Survival Analysis, and Applied Biostatistics.\n`;
+      } else {
+        promptText += `I missed ${missedQuestions.length} questions on this practice set. My weak areas are distributed as follows:\n`;
+        for (const [dom, count] of Object.entries(domainMissCount)) {
+          promptText += `- ${dom}: ${count} missed questions\n`;
+        }
+        promptText += `\nSpecific subtopics needing targeted drill:\n`;
+        subtopicList.forEach(st => {
+          promptText += `- ${st}\n`;
+        });
+        promptText += `\nPlease act as an expert biostatistics and medical inquiry professor. Provide a high-yield targeted drill:\n`;
+        promptText += `1. Review the core decision rules and formulas for these specific subtopics.\n`;
+        promptText += `2. Give me 3 clinical vignettes that test the common cognitive traps.\n`;
+        promptText += `3. Walk me step-by-step through the rationale and elimination strategy.\n`;
+      }
+
+      document.getElementById('geminiPromptTextarea').value = promptText;
+    }
+
+    function closeGeminiModal(e) {
+      if (e.target.id === 'geminiModal') closeGeminiModalDirect();
+    }
+
+    function closeGeminiModalDirect() {
+      document.getElementById('geminiModal').classList.remove('open');
+    }
+
+    function copyGeminiPrompt() {
+      const ta = document.getElementById('geminiPromptTextarea');
+      ta.select();
+      navigator.clipboard.writeText(ta.value).then(() => {
+        showToast('Study prompt copied to clipboard!');
+      }).catch(() => {
+        document.execCommand('copy');
+        showToast('Study prompt copied to clipboard!');
+      });
+    }
+
+    // --- Timer ---
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        if (timerRunning) {
+          timerSeconds++;
+          updateTimerDisplay();
+          if (timerSeconds % 30 === 0) saveState();
+        }
+      }, 1000);
+    }
+
+    function toggleTimer() {
+      timerRunning = !timerRunning;
+      showToast(timerRunning ? 'Timer resumed' : 'Timer paused');
+    }
+
+    function updateTimerDisplay() {
+      const mins = Math.floor(timerSeconds / 60);
+      const secs = timerSeconds % 60;
+      document.getElementById('timerDisplay').textContent =
+        `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    // --- Theme ---
+    function toggleTheme() {
+      const current = document.body.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+      saveState();
+    }
+
+    function setTheme(theme) {
+      document.body.setAttribute('data-theme', theme);
+      const sun = document.getElementById('themeIconSun');
+      const moon = document.getElementById('themeIconMoon');
+      if (theme === 'light') {
+        sun.style.display = 'block';
+        moon.style.display = 'none';
+      } else {
+        sun.style.display = 'none';
+        moon.style.display = 'block';
+      }
+    }
+
+    // --- Toast ---
+    let toastTimeout = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+    // --- Keyboard Navigation ---
+    function setupKeyboardNavigation() {
+      window.addEventListener('keydown', (e) => {
+        if (['input', 'textarea'].includes(e.target.tagName.toLowerCase())) return;
+
+        if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'p') {
+          prevQuestion();
+        } else if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'n') {
+          nextQuestion();
+        } else if (e.key.toLowerCase() === 'f') {
+          toggleFlagCurrentQuestion();
+        } else if (e.key.toLowerCase() === 's') {
+          toggleStrikethroughMode();
+        } else if (e.key.toLowerCase() === 'h') {
+          // If text selected, highlight it; otherwise toggle tool
+          const sel = window.getSelection().toString().trim();
+          if (sel.length > 1) {
+            applyHighlightText(sel);
+            window.getSelection().removeAllRanges();
+          } else {
+            toggleHighlighterMode();
+          }
+        } else if (e.key.toLowerCase() === 'r') {
+          openScoreReport();
+        } else if (['1', '2', '3', '4', '5'].includes(e.key)) {
+          const idx = parseInt(e.key, 10) - 1;
+          const q = filteredQuestions[currentIndex];
+          if (q && q.options[idx]) {
+            selectAnswer(q.options[idx].id);
+          }
+        } else if (['a', 'b', 'c', 'd', 'e'].includes(e.key.toLowerCase())) {
+          const letter = e.key.toUpperCase();
+          const q = filteredQuestions[currentIndex];
+          if (q && q.options.some(o => o.id === letter)) {
+            selectAnswer(letter);
+          }
+        }
+      });
+    }
+
+    // --- Set Navigation Helper ---
+    function navigateToSet(setNum, e) {
+      if (e) e.preventDefault();
+      const currentPath = window.location.pathname;
+      const isStandalone = currentPath.includes('SLI_');
+      let target = '';
+      if (setNum === 1) {
+        target = isStandalone ? 'SLI_120Q_Interactive_Exam.html' : 'index.html';
+      } else if (setNum === 2) {
+        target = isStandalone ? 'SLI_120Q_Set2_Interactive_Exam.html' : 'exam2.html';
+      } else if (setNum === 3) {
+        target = isStandalone ? 'SLI_60Q_Set3_Interactive_Exam.html' : 'exam3.html';
+      } else if (setNum === 4) {
+        target = isStandalone ? 'SLI_60Q_Set4_Interactive_Exam.html' : 'exam4.html';
+      } else if (setNum === 5) {
+        target = isStandalone ? 'SLI_60Q_Set5_Interactive_Exam.html' : 'exam5.html';
+      } else if (setNum === 6) {
+        target = isStandalone ? 'SLI_60Q_InHouse_Interactive_Exam.html' : 'inhouse.html';
+      }
+      window.location.href = target;
+    }
+
+    // --- Helpers ---
+    function escapeHtml(text) {
+      if (!text) return '';
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function escapeRegex(text) {
+      return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
